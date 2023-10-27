@@ -1,110 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Game: Rock, Paper, Scissors, Lizard, Spock"
+    />
+    <meta
+      name="keywords"
+      content="rock paper scissors lizard spock, rock, paper, scissors, lizard, spock, rpsls, game"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Game: Rock, Paper, Scissors, Lizard, Spock">
-    <meta name="keywords" content="rock paper scissors lizard spock, rock, paper, scissors, lizard, spock, rpsls, game">
-
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="icon" href="favicon.ico" />
 
     <title>Rock, Paper, Scissors, Lizard, Spock Game</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+      <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
     </header>
 
     <main>
-    <!-- Main background vector image -->
-    <section class="background-image">
-        <img src="" alt="">
+      <!-- Main background vector image -->
+      <section id="background-image">
 
-            <!-- Player name and icon/character -->
-            <h2>Get ready for battle!</h2>
-            <form id="user-name-choices" method="POST">
-                <label for="usersername">Enter Player Name</label>
-                <input aria-label="Enter Player Name" type="text" name="usersname" id="entername" class="text-input" required>
-                <br>
-                <label>Choose A Character</label>
-                <br>
-                <!-- Character/icon selector -->
-            <div class="radio-buttons">
-                <div>
-                    <label for="character1">character1(icon anchor to go here)</label>
-                    <input aria-label="character1" type="radio" name="character_choice" id="character1" value="character1" required checked>
-                </div>
-                <div>
-                    <label for="character2">character2(icon anchor to go here)</label>
-                    <input aria-label="character2" type="radio" name="character_choice" id="character2" value="character2" required>
-                </div>
-                <div>
-                    <label for="character3">character3(icon anchor to go here)</label>
-                    <input aria-label="character3" type="radio" name="character_choice" id="character3" value="character3" required>
-                </div>
-                <button aria-label="ready" type="submit" class="ready-button">READY!</button>
+        <!-- Player name and icon/character -->
+        <h2>Get ready for battle!</h2>
+        <form id="user-name-choices" method="POST">
+          <label for="usersername">Enter Player Name</label>
+          <input
+            aria-label="Enter Player Name"
+            type="text"
+            name="usersname"
+            id="entername"
+            class="text-input"
+            required
+          />
+          <br />
+          <label>Choose A Character</label>
+          <br />
+          <!-- Character/icon selector -->
+          <div class="radio-buttons">
+            <div>
+              <label for="character1">character1(icon anchor to go here)</label>
+              <input
+                aria-label="character1"
+                type="radio"
+                name="character_choice"
+                id="character1"
+                value="character1"
+                required
+                checked
+              />
+              <i class="fa-solid fa-user-astronaut"></i>
             </div>
-            </form>
-
-            <!-- Weapons of choice -->
-            <div class="weapons-div">
-            <h3>Choose your weapon</h3>
-            <button aria-label="rock" class="weapon" data-choice="0">Rock</button>
-            <br>
-            <i class=""></i>
-
-            <button aria-label="paper" class="weapon" data-choice="1">Paper</button>
-            <br>
-            <i class=""></i>
-
-            <button aria-label="scissors" class="weapon" data-choice="2">Scissors</button>
-            <br>
-            <i class=""></i>
-
-            <button aria-label="lizard" class="weapon" data-choice="3">Lizard</button>
-            <br>
-            <i class=""></i>
-
-            <button aria-label="spock" class="weapon" data-choice="4">Spock</button>
-            <br>
-            <i class=""></i>
+            <div>
+              <label for="character2">character2(icon anchor to go here)</label>
+              <input
+                aria-label="character2"
+                type="radio"
+                name="character_choice"
+                id="character2"
+                value="character2"
+                required
+              />
+              <i class="fa-solid fa-dragon"></i>
             </div>
-
-            <!-- Score board and game result -->
-            <div class="score-board">
-                <h3>SCORE BOARD</h3>
-                <p id="round-counter">ROUND<span>0</span></p>
-                <p id="user-score">User score<span>0</span></p>
-                <p id="computer-score">Computer score<span>0</span></p>
+            <div>
+              <label for="character3">character3(icon anchor to go here)</label>
+              <input
+                aria-label="character3"
+                type="radio"
+                name="character_choice"
+                id="character3"
+                value="character3"
+                required
+              />
+              <i class="fa-solid fa-ghost"></i>
             </div>
+            <button aria-label="ready" type="submit" class="ready-button">
+              READY!
+            </button>
+          </div>
+        </form>
 
-            <!-- Player div -->
-            <div class="user-zone">
-                <i></i>
-                <p id="player-name-zone">Player's selected name</p>
-            </div>
+        <!-- Weapons of choice -->
+        <div class="weapons-div">
+          <h3>Choose your weapon</h3>
+          <button aria-label="rock" class="weapon" data-choice="0">Rock</button>
+          <br />
+          <i class="fa-solid fa-hand-back-fist" style="color: #9cb329"></i>
 
-            <!-- Computer div -->
-            <div class="computer-zone">
-                <i></i>
-                <p id="computer-name-zone">Computer</p>
-            </div>
+          <button aria-label="paper" class="weapon" data-choice="1">
+            Paper
+          </button>
+          <br />
+          <i class="fa-solid fa-hand" style="color: #9cb329"></i>
 
-    </section>
+          <button aria-label="scissors" class="weapon" data-choice="2">
+            Scissors
+          </button>
+          <br />
+          <i class="fa-solid fa-hand-scissors" style="color: #9cb329"></i>
+
+          <button aria-label="lizard" class="weapon" data-choice="3">
+            Lizard
+          </button>
+          <br />
+          <i class="fa-solid fa-hand-lizard" style="color: #9cb329"></i>
+
+          <button aria-label="spock" class="weapon" data-choice="4">
+            Spock
+          </button>
+          <br />
+          <i class="fa-solid fa-hand-spock" style="color: #9cb329"></i>
+        </div>
+
+        <!-- Score board and game result -->
+        <div class="score-board">
+          <h3>SCORE BOARD</h3>
+          <p id="round-counter">ROUND<span>0</span></p>
+          <p id="user-score">User score<span>0</span></p>
+          <p id="computer-score">Computer score<span>0</span></p>
+        </div>
+
+        <!-- Player div -->
+        <div class="user-zone">
+          <i></i>
+          <p id="player-name-zone">Player's selected name</p>
+        </div>
+
+        <!-- Computer div -->
+        <div class="computer-zone">
+          <i></i>
+          <p id="computer-name-zone">Computer</p>
+        </div>
+      </section>
     </main>
 
     <!-- footer -->
     <footer>
-        <p id="game-rules">Game Rules</p>
+      <p id="game-rules">Game Rules</p>
     </footer>
 
     <!-- Fontawesome icons -->
     <style></style>
+    <script
+      src="https://kit.fontawesome.com/eeaff8d393.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="assets/js/script.js"></script>
-
-</body>
+  </body>
 </html>
