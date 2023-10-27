@@ -13,8 +13,14 @@
       content="rock paper scissors lizard spock, rock, paper, scissors, lizard, spock, rpsls, game"
     />
 
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
     <link rel="icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Rock, Paper, Scissors, Lizard, Spock Game</title>
   </head>
@@ -26,8 +32,7 @@
 
     <main>
       <!-- Main background vector image -->
-      <section id="background-image">
-
+      <section id="hero">
         <!-- Player name and icon/character -->
         <h2>Get ready for battle!</h2>
         <form id="user-name-choices" method="POST">
@@ -45,42 +50,43 @@
           <br />
           <!-- Character/icon selector -->
           <div class="radio-buttons">
-            <div>
-              <label for="character1">character1(icon anchor to go here)</label>
+              <label for="character1"
+                >Astronaut <i class="fa-solid fa-user-astronaut"></i
+              ></label>
               <input
                 aria-label="character1"
                 type="radio"
                 name="character_choice"
                 id="character1"
                 value="character1"
+                data-choice="0"
                 required
                 checked
               />
-              <i class="fa-solid fa-user-astronaut"></i>
-            </div>
-            <div>
-              <label for="character2">character2(icon anchor to go here)</label>
+              <label for="character2"
+                >Dragon <i class="fa-solid fa-dragon"></i
+              ></label>
               <input
                 aria-label="character2"
                 type="radio"
                 name="character_choice"
                 id="character2"
                 value="character2"
+                data-choice="1"
                 required
               />
-              <i class="fa-solid fa-dragon"></i>
-            </div>
-            <div>
-              <label for="character3">character3(icon anchor to go here)</label>
+              <label for="character3"
+                >Ghost <i class="fa-solid fa-ghost"></i
+              ></label>
               <input
                 aria-label="character3"
                 type="radio"
                 name="character_choice"
                 id="character3"
                 value="character3"
+                data-choice="2"
                 required
               />
-              <i class="fa-solid fa-ghost"></i>
             </div>
             <button aria-label="ready" type="submit" class="ready-button">
               READY!
@@ -91,33 +97,30 @@
         <!-- Weapons of choice -->
         <div class="weapons-div">
           <h3>Choose your weapon</h3>
-          <button aria-label="rock" class="weapon" data-choice="0">Rock</button>
-          <br />
-          <i class="fa-solid fa-hand-back-fist" style="color: #9cb329"></i>
+          <button aria-label="rock" class="weapon" data-choice="0">
+            Rock<i
+              class="fa-solid fa-hand-back-fist"
+              style="color: #9cb329"
+            ></i>
+          </button>
 
           <button aria-label="paper" class="weapon" data-choice="1">
-            Paper
+            Paper<i class="fa-solid fa-hand" style="color: #9cb329"></i>
           </button>
-          <br />
-          <i class="fa-solid fa-hand" style="color: #9cb329"></i>
 
           <button aria-label="scissors" class="weapon" data-choice="2">
-            Scissors
+            Scissors<i
+              class="fa-solid fa-hand-scissors"
+              style="color: #9cb329"
+            ></i>
           </button>
-          <br />
-          <i class="fa-solid fa-hand-scissors" style="color: #9cb329"></i>
 
           <button aria-label="lizard" class="weapon" data-choice="3">
-            Lizard
+            Lizard<i class="fa-solid fa-hand-lizard" style="color: #9cb329"></i>
           </button>
-          <br />
-          <i class="fa-solid fa-hand-lizard" style="color: #9cb329"></i>
-
           <button aria-label="spock" class="weapon" data-choice="4">
-            Spock
+            Spock<i class="fa-solid fa-hand-spock" style="color: #9cb329"></i>
           </button>
-          <br />
-          <i class="fa-solid fa-hand-spock" style="color: #9cb329"></i>
         </div>
 
         <!-- Score board and game result -->
@@ -128,15 +131,12 @@
           <p id="computer-score">Computer score<span>0</span></p>
         </div>
 
-        <!-- Player div -->
+        <!-- Player/Computer div -->
         <div class="user-zone">
-          <i></i>
+        <i class="fa-solid fa-thumbs-up" style="color: #9cb329"></i>
           <p id="player-name-zone">Player's selected name</p>
-        </div>
-
-        <!-- Computer div -->
-        <div class="computer-zone">
-          <i></i>
+        <!-- Computer -->
+        <i class="fa-solid fa-thumbs-down" style="color: #9cb329"></i>
           <p id="computer-name-zone">Computer</p>
         </div>
       </section>
