@@ -9,32 +9,32 @@
 //
 function playerNameCharacter(){
 
-}
+};
 
 function rungame(){
 
-}
+};
 
 function checkWinner() {
 
-}
+};
 
 function incrementScore() {
 
-}
+};
 
 function incrementRound() {
 
-}
+};
 
 function resetPositive() {
 
-}
+};
 
 function youWin(){
 
-}
+};
 
 function youLose(){
 
-}
+};
