@@ -20,30 +20,56 @@
     </header>
 
     <main>
-    <section>
-        <!-- game area -->
-        <div class="game-customization">
+    <!-- Main background vector image -->
+    <section class="background-image">
+        <img src="" alt="">
 
-            <!-- colour customization -->
-            <div>
-               
+            <!-- Player name and icon/character -->
+            <h2>Get ready for battle!</h2>
+            <form id="user-name-choices" method="POST">
+                <label for="usersername">Enter Player Name</label>
+                <input aria-label="Enter Player Name" type="text" name="usersname" id="entername" class="text-input" required>
+                <br>
+                <label>Choose A Character</label>
+                <br>
+                <!-- Character/icon selector -->
+            <div class="radio-buttons">
+                <div>
+                    <label for="character1">character1(icon anchor to go here)</label>
+                    <input aria-label="character1" type="radio" name="character_choice" id="character1" value="character1" required checked>
+                </div>
+                <div>
+                    <label for="character2">character2(icon anchor to go here)</label>
+                    <input aria-label="character2" type="radio" name="character_choice" id="character2" value="character2" required>
+                </div>
+                <div>
+                    <label for="character3">character3(icon anchor to go here)</label>
+                    <input aria-label="character3" type="radio" name="character_choice" id="character3" value="character3" required>
+                </div>
+                <button></button>
             </div>
+            </form>
 
-            <!-- game area choices -->
+            <!-- Weapons of choice -->
             <div>
             
             </div>
 
-            <!-- score counter and game result -->
+            <!-- Score board and game result -->
             <div>
              
             </div>
 
-            <!-- player/computer divs -->
+            <!-- Player div -->
             <div>
                 
             </div>
-        </div>
+
+            <!-- Computer div -->
+            <div>
+
+            </div>
+
     </section>
     </main>
 
@@ -53,7 +79,8 @@
     </footer>
 
     <!-- Fontawesome icons -->
-    <script></script>
     <style></style>
+    <script></script>
+
 </body>
 </html>
