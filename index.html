@@ -46,28 +46,52 @@
                     <label for="character3">character3(icon anchor to go here)</label>
                     <input aria-label="character3" type="radio" name="character_choice" id="character3" value="character3" required>
                 </div>
-                <button></button>
+                <button aria-label="ready" type="submit" class="ready-button">READY!</button>
             </div>
             </form>
 
             <!-- Weapons of choice -->
-            <div>
-            
+            <div class="weapons-div">
+            <h3>Choose your weapon</h3>
+            <button aria-label="rock" class="weapon" data-choice="0">Rock</button>
+            <br>
+            <i class=""></i>
+
+            <button aria-label="paper" class="weapon" data-choice="1">Paper</button>
+            <br>
+            <i class=""></i>
+
+            <button aria-label="scissors" class="weapon" data-choice="2">Scissors</button>
+            <br>
+            <i class=""></i>
+
+            <button aria-label="lizard" class="weapon" data-choice="3">Lizard</button>
+            <br>
+            <i class=""></i>
+
+            <button aria-label="spock" class="weapon" data-choice="4">Spock</button>
+            <br>
+            <i class=""></i>
             </div>
 
             <!-- Score board and game result -->
-            <div>
-             
+            <div class="score-board">
+                <h3>SCORE BOARD</h3>
+                <p id="round-counter">ROUND<span>0</span></p>
+                <p id="user-score">User score<span>0</span></p>
+                <p id="computer-score">Computer score<span>0</span></p>
             </div>
 
             <!-- Player div -->
-            <div>
-                
+            <div class="user-zone">
+                <i></i>
+                <p id="player-name-zone">Player's selected name</p>
             </div>
 
             <!-- Computer div -->
-            <div>
-
+            <div class="computer-zone">
+                <i></i>
+                <p id="computer-name-zone">Computer</p>
             </div>
 
     </section>
@@ -75,12 +99,12 @@
 
     <!-- footer -->
     <footer>
-        <p>Game Rules</p>
+        <p id="game-rules">Game Rules</p>
     </footer>
 
     <!-- Fontawesome icons -->
     <style></style>
-    <script></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
 </html>
