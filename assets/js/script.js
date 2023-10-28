@@ -37,4 +37,4 @@ function youWin(){
 
 function youLose(){
 
-};
+}
