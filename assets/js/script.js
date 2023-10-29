@@ -6,6 +6,7 @@
 * declare variables for weapon selection
 */
 var enterName = document.getElementById('entername');
+var customPlayerName = document.getElementById('player-name-zone');
 let playerCharacter = document.getElementsByName('character-choice');
 let computerCharacter = document.getElementsByName('character-choice') !== playerCharacter;
 let playerWeapon = document.getElementsByClassName('weapons-div');
@@ -19,21 +20,18 @@ let computerScore = document.getElementById('computer-score');
 let matchWinner = document.getElementById('the-winner-is');
 const resetButton = document.getElementsByClassName('reset-button');
 
-//Allow user to use enter key to be READY! from love maths project
-document.getElementsByTagName("ready-button").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        playerName();
-        playerCharacter();
-        computerCharacter();
-    }
-});
-
 // Add event listener to ready to play button
 start.addEventListener("click", function (event) {
     event.preventDefault();
     if (this.getAttribute('usersname') === true); {
         runGame();
     }
+    //Allow user to use enter key to be READY! from love maths project
+    document.getElementsByTagName("ready-button").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            runGame();
+        }
+    });
 });
 // The main game loop
 function runGame() {
@@ -45,7 +43,7 @@ function runGame() {
 
 // Function to add custom name to player zone
 function playerName() {
-    document.getElementById("player-name-zone").innerText = enterName;
+    enterName.getElementById("player-name-zone").value = customPlayerName;
 
 }
 // Adds chosen character as icon
@@ -60,7 +58,11 @@ function checkWinner() {
 
 }
 
-function incrementScore() {
+function incrementPlayerScore() {
+
+}
+
+function incrementComputerScore() {
 
 }
 
