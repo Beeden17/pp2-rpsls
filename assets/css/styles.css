@@ -1,18 +1,18 @@
 /* --------- Global style */
 
 body {
-    min-height: 100vh;
-    display: flex;
-    align-content: center;
-    justify-content: center;
     font-family: 'Comic Neue', cursive;
-    margin: 0;
+    margin: auto 0;
     color: white;
+    text-align: center;
 
 }
 
 h1 {
     background-color: black;
+    width: 100%;
+    text-align: center;
+    margin: auto 0;
 }
 
 #hero {

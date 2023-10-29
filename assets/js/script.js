@@ -31,10 +31,10 @@ function resetPositive() {
 
 };
 
-function youWin(){
+function youWin() {
 
 };
 
-function youLose(){
+function youLose() {
 
 }
