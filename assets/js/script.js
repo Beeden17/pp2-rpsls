@@ -1,7 +1,9 @@
 //Allow user to use enter key to be READY! from love maths project
 document.getElementsByTagName("ready-button").addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-        checkAnswer();
+        playerName();
+        playerCharacter();
+        computerCharacter();
         }
 
 /**
