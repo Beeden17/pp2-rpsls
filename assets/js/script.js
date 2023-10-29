@@ -14,7 +14,7 @@ let computerWeapon = document.getElementsByClassName('weapons-div') !== playerWe
 const start = document.getElementsByClassName('get-ready-button');
 const weaponChoices = ["rock", "paper", "scissors", "lizard", "spock"];
 const iconChoices = ["astronaut", "dragon", "ghost"];
-var gameRound = document.getElementById('round-counter');
+var gameRound = document.getElementById('round-number');
 var playerScore = document.getElementById('user-score');
 let computerScore = document.getElementById('computer-score');
 let matchWinner = document.getElementById('the-winner-is');
