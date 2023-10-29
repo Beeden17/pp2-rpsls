@@ -29,7 +29,7 @@ const resetButton = document.getElementsByClassName('reset-button');
 
 start.addEventListener("click", function () {
     if (this.getAttribute('username'));
-    if (this.getAttribute('data-choice') === "submit");{
+    if (this.getAttribute('data-type') === "submit");{
         playerName;
         playerIcon;
         computerIcon;
