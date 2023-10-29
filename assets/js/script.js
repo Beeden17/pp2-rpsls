@@ -1,7 +1,7 @@
-    //Allow user to use enter key to be READY!
-    document.getElementsByTagName("ready-button").addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            checkAnswer();
+//Allow user to use enter key to be READY! from love maths project
+document.getElementsByTagName("ready-button").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        checkAnswer();
         }
 
 /**
@@ -9,21 +9,25 @@
  * Declare variables for player name
  * Declare variables for character selection for player
  * declare variables for computer character
- * decalre variables for weapon selection
+ * declare variables for weapon selection
  */
-let playerName = document.getElementById('entername');
+let enterName = document.getElementById('entername');
 let playerCharacter = document.getElementsByName('character-choice');
 let computerCharacter = document.getElementsByName('character-choice') !== playerCharacter;
+let playerWeapon = document.getElementsByClassName('weapons-div');
+let computerWeapon = document.getElementsByClassName('weapons-div') !== playerWeapon;
+let gameRound = document.getElementById('round-counter');
+let playerScore = document.getElementById('user-score');
+let computerScore = document.getElementById('computer-score');
+let matchWinner = document.getElementById('the-winner-is');
+let resetButton = document.getElementsByClassName('reset-button');
 
-
-//Functions to use for game:
-
-//
+//Functions to use for game
 function playerName(){
 
 }
 
-function rungame(){
+function runGame(){
 
 }
 

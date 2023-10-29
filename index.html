@@ -43,6 +43,8 @@
             name="usersname"
             id="entername"
             class="text-input"
+            minlength="3"
+            maxlength="10"
             required
           />
           <br />
@@ -113,18 +115,15 @@
               style="color: #9cb329"
             ></i>
           </button>
-
           <button aria-label="paper" class="weapon" data-choice="1">
             Paper<i class="fa-solid fa-hand" style="color: #9cb329"></i>
           </button>
-
           <button aria-label="scissors" class="weapon" data-choice="2">
             Scissors<i
               class="fa-solid fa-hand-scissors"
               style="color: #9cb329"
             ></i>
           </button>
-
           <button aria-label="lizard" class="weapon" data-choice="3">
             Lizard<i class="fa-solid fa-hand-lizard" style="color: #9cb329"></i>
           </button>
@@ -137,6 +136,7 @@
         <div class="score-board">
           <h3>SCORE BOARD</h3>
           <p id="round-counter">ROUND<span>0</span></p>
+          <H2 id="the-winner-is">THE WINNER IS COMPUTER!</H2>
           <p id="user-score">User score<span>0</span></p>
           <p id="computer-score">Computer score<span>0</span></p>
           <button aria-label="reset" type="submit" class="reset-button">
