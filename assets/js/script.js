@@ -52,14 +52,14 @@ for (let weapon of weapons) {
         if (this.getAttribute("data-choice") === 'submit');
         checkWinner();
     } else {
-        runGame();
+        runGame(enterName, playerCharacter);
 
     });
 
 }
 
 // The main game loop
-function runGame() {
+function runGame(enterName, playerCharacter) {
     // add event listeners to game tiles
     // call function to tell user to select a tile, and set round number to 1
     // end rungame

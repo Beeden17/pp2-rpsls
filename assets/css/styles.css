@@ -24,7 +24,8 @@ h1 {
 
 button {
     background: none;
-    border: none;
+    border: rgb(50, 150, 50);
+    border-radius: 5px;
     color: #fff;
     font-size: 14px;
     padding: 10px 25px;
