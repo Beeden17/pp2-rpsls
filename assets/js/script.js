@@ -43,7 +43,7 @@ start.addEventListener("click", function (event) {
     event.preventDefault();
     // Grab user details
     console.log(event);
-    runGame();
+    runGame(enterName, playerCharacter);
 });
 
 // Add event listener to weapon buttons
@@ -51,7 +51,7 @@ for (let weapon of weapons) {
     weapon.addEventListener("click", function () {
         if (this.getAttribute("data-choice") === 'submit');
         checkWinner();
-    } else {
+        } else {
         runGame(enterName, playerCharacter);
 
     });
