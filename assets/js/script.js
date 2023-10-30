@@ -46,19 +46,7 @@ start.addEventListener("click", function (event) {
     runGame(enterName, playerCharacter);
 });
 
-// Add event listener to weapon buttons
-for (let weapon of weapons) {
-    weapon.addEventListener("click", function () {
-        if (this.getAttribute("data-choice") === 'submit');
-        checkWinner();
-        } else {
-        runGame(enterName, playerCharacter);
-
-    });
-
-}
-
-// The main game loop
+// The main game 'loop'
 function runGame(enterName, playerCharacter) {
     // add event listeners to game tiles
     // call function to tell user to select a tile, and set round number to 1
