@@ -30,34 +30,31 @@ enterName.addEventListener('input', function () {
 
 //Allow user to use enter key to be READY! from love maths project
 start.addEventListener("keydown", function (event) {
-    event.preventDefault;
     if (event.key === "Enter") {
-        runGame(playerChooses);
+        runGame();
+        event.preventDefault;
     }
 });
 
-/**
- * // Add event listener to weapon buttons
+// Add event listener to weapon buttons
 for (let weapon of weapons) {
     weapon.addEventListener("click", function () {
-        let playerChooses = this.getAttribute("data-choice");
-    }
-    runGame(playerChooses));
-} 
-} playerChooses 
- */
+        if (this.getAttribute("data-choice") === 'submit');
+        checkWinner();
+        } else {
+            runGame();
+
+    })
+
+}
 
 // The main game loop
-function runGame(playerChooses) {
+function runGame() {
+
 }
 
 // Adds chosen character as icon
 function playerIcon() {
-
-}
-
-// Add player weapon choice
-function playerChooses() {
 
 }
 
