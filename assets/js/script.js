@@ -8,8 +8,8 @@
 console.log('start');
 let enterName = document.getElementById('usersname');
 let customPlayerName = document.getElementById('player-name-zone');
-let playerCharacter = document.getElementsByName('character-choice');
-let computerCharacter = document.getElementsByName('character-choice') !== playerCharacter;
+let playerCharacter = document.getElementsByClassName('radio-buttons');
+let computerCharacter = document.getElementsByClassName('radio-buttons');
 let weapons = document.getElementsByClassName('weapon');
 const start = document.getElementById('get-ready-button');
 const weaponChoices = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -21,7 +21,7 @@ let matchWinner = document.getElementById('the-winner-is');
 const resetButton = document.getElementsByClassName('reset-button');
 
 // Set curser to be already in the answer box, from love maths
-document.getElementById("entername").focus();
+document.getElementById("usersname").focus();
 
 // Event listener to add custom name to player zone
 enterName.addEventListener('input', function () {
