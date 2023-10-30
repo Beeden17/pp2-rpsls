@@ -5,7 +5,8 @@
 * declare variables for computer character
 * declare variables for weapon selection
 */
-let enterName = document.getElementById('entername');
+console.log('start');
+let enterName = document.getElementById('usersname');
 let customPlayerName = document.getElementById('player-name-zone');
 let playerCharacter = document.getElementsByName('character-choice');
 let computerCharacter = document.getElementsByName('character-choice') !== playerCharacter;
@@ -29,11 +30,20 @@ enterName.addEventListener('input', function () {
 });
 
 //Allow user to use enter key to be READY! from love maths project
-start.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        runGame();
-        event.preventDefault;
-    }
+// start.addEventListener("keydown", function (event) {
+//     event.preventDefault();
+//     if (event.key === "Enter") {
+//         runGame();
+
+//     }
+// });
+
+// Click event listener
+start.addEventListener("click", function (event) {
+    event.preventDefault();
+    // Grab user details
+    console.log(event);
+    runGame();
 });
 
 // Add event listener to weapon buttons
@@ -41,15 +51,26 @@ for (let weapon of weapons) {
     weapon.addEventListener("click", function () {
         if (this.getAttribute("data-choice") === 'submit');
         checkWinner();
-        } else {
-            runGame();
+    } else {
+        runGame();
 
-    })
+    });
 
 }
 
 // The main game loop
 function runGame() {
+    // add event listeners to game tiles
+    // call function to tell user to select a tile, and set round number to 1
+    // end rungame
+    // user selects tile
+    // function to capture what is selected
+    // call random computer selection
+    // capter computer selection
+    // indicate to user the computer selection,
+    // call function to see who won the hand
+    // display who won game( seperate function)
+    // function to count round winners, who won the match
 
 }
 

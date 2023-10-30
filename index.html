@@ -41,59 +41,63 @@
             aria-label="Enter Player Name"
             type="text"
             name="usersname"
-            id="entername"
+            id="usersname"
             class="text-input"
             minlength="3"
             maxlength="10"
             required
           />
           <br />
-          <label>Choose A Character</label>
+          <h2>Choose A Character</h2>
           <br />
           <!-- Character/icon selector -->
           <div class="radio-buttons">
-              <label for="character1"
-                >Astronaut <i class="fa-solid fa-user-astronaut"></i
-              ></label>
-              <input
-                aria-label="character1"
-                type="radio"
-                name="character_choice"
-                id="character1"
-                value="character1"
-                data-choice="0"
-                required
-                checked
-              />
-              <label for="character2"
-                >Dragon <i class="fa-solid fa-dragon"></i
-              ></label>
-              <input
-                aria-label="character2"
-                type="radio"
-                name="character_choice"
-                id="character2"
-                value="character2"
-                data-choice="1"
-                required
-              />
-              <label for="character3"
-                >Ghost <i class="fa-solid fa-ghost"></i
-              ></label>
-              <input
-                aria-label="character3"
-                type="radio"
-                name="character_choice"
-                id="character3"
-                value="character3"
-                data-choice="2"
-                required
-              />
-            </div>
-            <button aria-label="get-ready" data-type="submit" id="get-ready-button">
-              GET READY!
-            </button>
-        <!-- Modal (popup)
+            <label for="character1"
+              >Astronaut <i class="fa-solid fa-user-astronaut"></i
+            ></label>
+            <input
+              aria-label="character1"
+              type="radio"
+              name="character_choice"
+              id="character1"
+              value="character1"
+              data-choice="0"
+              required
+              checked
+            />
+            <label for="character2"
+              >Dragon <i class="fa-solid fa-dragon"></i
+            ></label>
+            <input
+              aria-label="character2"
+              type="radio"
+              name="character_choice"
+              id="character2"
+              value="character2"
+              data-choice="1"
+              required
+            />
+            <label for="character3"
+              >Ghost <i class="fa-solid fa-ghost"></i
+            ></label>
+            <input
+              aria-label="character3"
+              type="radio"
+              name="character_choice"
+              id="character3"
+              value="character3"
+              data-choice="2"
+              required
+            />
+          </div>
+          <button
+            aria-label="get-ready"
+            data-type="submit"
+            id="get-ready-button"
+          >
+            GET READY!
+          </button>
+          <!-- Modal (popup)
             <div class="modal-container">
                 <div class="modal">
                     <h1>Ready to play</h1>
@@ -102,31 +106,29 @@
                         READY TO PLAY
                     </button>
                 </div>
-            </div>-->
-          </div>
+            </div> -->
         </form>
 
         <!-- Weapons of choice -->
         <div class="weapons-div">
           <h3>Choose your weapon</h3>
-          <button aria-label="rock" class="weapon" data-choice="0"><i
-              class="fa-solid fa-hand-back-fist"
-              style="color: #9cb329"
-            ></i>
+          <button aria-label="rock" class="weapon" data-choice="0">
+            <i class="fa-solid fa-hand-back-fist" style="color: #9cb329"></i>
           </button>
 
-          <button aria-label="paper" class="weapon" data-choice="1"><i class="fa-solid fa-hand" style="color: #9cb329"></i>
+          <button aria-label="paper" class="weapon" data-choice="1">
+            <i class="fa-solid fa-hand" style="color: #9cb329"></i>
           </button>
 
-          <button aria-label="scissors" class="weapon" data-choice="2"><i
-              class="fa-solid fa-hand-scissors"
-              style="color: #9cb329"
-            ></i>
+          <button aria-label="scissors" class="weapon" data-choice="2">
+            <i class="fa-solid fa-hand-scissors" style="color: #9cb329"></i>
           </button>
 
-          <button aria-label="lizard" class="weapon" data-choice="3"><i class="fa-solid fa-hand-lizard" style="color: #9cb329"></i>
+          <button aria-label="lizard" class="weapon" data-choice="3">
+            <i class="fa-solid fa-hand-lizard" style="color: #9cb329"></i>
           </button>
-          <button aria-label="spock" class="weapon" data-choice="4"><i class="fa-solid fa-hand-spock" style="color: #9cb329"></i>
+          <button aria-label="spock" class="weapon" data-choice="4">
+            <i class="fa-solid fa-hand-spock" style="color: #9cb329"></i>
           </button>
         </div>
 
@@ -134,24 +136,24 @@
         <div class="score-board">
           <h3>SCORE BOARD</h3>
           <p>ROUND<span id="round-number">0</span></p>
-          <H2 id="the-winner-is">THE WINNER IS COMPUTER!</H2>
+          <h2 id="the-winner-is">THE WINNER IS COMPUTER!</h2>
           <p>User score<span id="user-score">0</span></p>
           <p>Computer score<span id="computer-score">0</span></p>
           <button aria-label="reset" type="submit" class="reset-button">
             RESET!
           </button>
         </div>
-        <br>
+        <br />
 
         <!-- Player Zone div -->
         <div class="user-game-zone">
-            <span id="user-chosen">x</span>
-            <p id="player-name-zone">Player's selected name</p>
+          <span id="user-chosen">x</span>
+          <p id="player-name-zone">Player's selected name</p>
         </div>
         <!-- Computer Zone div -->
         <div class="computer-game-zone">
-            <span id="computer-chosen">x</span>
-            <p id="computer-name-zone">Computer</p>
+          <span id="computer-chosen">x</span>
+          <p id="computer-name-zone">Computer</p>
         </div>
       </section>
     </main>
@@ -167,6 +169,6 @@
       src="https://kit.fontawesome.com/eeaff8d393.js"
       crossorigin="anonymous"
     ></script>
-    <script src="/assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
