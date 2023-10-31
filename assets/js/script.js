@@ -5,10 +5,10 @@
 * declare variables for computer character
 * declare variables for weapon selection
 */
-
+console.log('start');
 let enterName = document.getElementById('usersname');
 let customPlayerName = document.getElementById('player-name-zone');
-
+let customPlayerIcon = document.getElementById('user-chosen');
 let weapons = document.getElementsByClassName('weapon');
 const start = document.getElementById('get-ready-button');
 const weaponChoices = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -22,11 +22,11 @@ const resetButton = document.getElementsByClassName('reset-button');
 // Set curser to be already in the answer box, from love maths
 document.getElementById("usersname").focus();
 
-// Event listener to add custom name to player zone
-enterName.addEventListener('input', function () {
-    const userInput = enterName.value;
-    customPlayerName.textContent = `${userInput}`;
-});
+// // Event listener to add custom name to player zone
+// enterName.addEventListener('input', function () {
+//     const userInput = enterName.value;
+//     customPlayerName.textContent = `${userInput}`;
+// });
 
 //Allow user to use enter key to be READY! from love maths project
 // start.addEventListener("keydown", function (event) {
@@ -40,9 +40,21 @@ enterName.addEventListener('input', function () {
 // Click event listener
 start.addEventListener("click", function (event) {
     event.preventDefault();
+    // Validate user input here!!!
     // Grab user details
+    let name = event.target.form[0].value;
+    let playerIcon;
+    if (event.target.form[1].checked) {
+        playerIcon = 'astronaut';
+    } else if (event.target.form[2].checked) {
+        playerIcon = 'dragon';
+    } else if (event.target.form[3].checked) {
+        playerIcon = 'ghost';
+    } else {
+        playerIcon = 'astronaut';
+    }
     console.log(event);
-    runGame(enterName, playerCharacter);
+    runGame(name, playerIcon);
 });
 
 // Get the radio buttons by their class name
@@ -51,22 +63,22 @@ var playerCharacter = document.getElementsByClassName('radio-buttons');
 // Get the span element
 var resultPlayerSpan = document.getElementById("player-name-zone");
 
-// Add event listener to each radio button
-for (var i = 0; i < playerCharacter.length; i++) {
-    playerCharacter[i].addEventListener("change", function () {
-        // Check which radio button is selected
-        for (var j = 0; j < playerCharacter.length; j++) {
-            if (playerCharacter[j].checked) {
-                // Set the selected radio button value to the span element
-                resultPlayerSpan.textContent = playerCharacter[j].value;
-                break;
-            }
-        }
-    });
+function updatePlayerDetails(name, playerIcon) {
+    customPlayerName.innerText = name;
+    if (playerIcon == 'astronaut') {
+        customPlayerIcon.innerHTML = '<i class="fa-solid fa-user-astronaut"></i>';
+    } else if (playerIcon == 'dragon') {
+        customPlayerIcon.innerHTML = '<i class="fa-solid fa-dragon"></i>';
+    } else if (playerIcon == 'ghost') {
+        customPlayerIcon.innerHTML = '<i class="fa-solid fa-ghost"></i>';
+    }
 }
-
 // The main game 'loop'
-function runGame(enterName, playerCharacter) {
+function runGame(name, playerIcon) {
+    console.log('runGame');
+    console.log(name);
+    console.log(playerIcon);
+    updatePlayerDetails(name, playerIcon);
     // Add event listener to weapon tiles
     // call function to tell user to select a tile, and set round number to 1
     // end rungame
