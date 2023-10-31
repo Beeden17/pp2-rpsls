@@ -73,12 +73,34 @@ function updatePlayerDetails(name, playerIcon) {
         customPlayerIcon.innerHTML = '<i class="fa-solid fa-ghost"></i>';
     }
 }
+
+function playerHandSelection(event) {
+    event.stopPropagation();
+    console.log('playerHandSelection1');
+    console.log(event);
+    console.log(event.target.attributes[2].value);
+    let playerHand = event.target.attributes[2].value;
+    removeGameEventListeners();
+    // captured value of player hand, needs passing to game logic function
+}
+function addGameEventListeners() {
+    for (let weapon of weapons) {
+        weapon.addEventListener('click', playerHandSelection);
+    }
+}
+function removeGameEventListeners() {
+    for (let weapon of weapons) {
+        weapon.removeEventListener('click', playerHandSelection);
+    }
+}
+
 // The main game 'loop'
 function runGame(name, playerIcon) {
     console.log('runGame');
     console.log(name);
     console.log(playerIcon);
     updatePlayerDetails(name, playerIcon);
+    addGameEventListeners();
     // Add event listener to weapon tiles
     // call function to tell user to select a tile, and set round number to 1
     // end rungame

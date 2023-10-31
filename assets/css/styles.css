@@ -33,6 +33,12 @@ button {
     transition: 100ms;
 }
 
+/* prevent from clicking on the weapon icon but still listening for event*/
+.weapons>i {
+    pointer-events: none;
+    cursor: pointer;
+}
+
 /* Selections grow, tip from webdev simplified youtube */
 button:hover {
     transform: scale(1.5);
