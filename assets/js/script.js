@@ -5,11 +5,10 @@
 * declare variables for computer character
 * declare variables for weapon selection
 */
-console.log('start');
+
 let enterName = document.getElementById('usersname');
 let customPlayerName = document.getElementById('player-name-zone');
-let playerCharacter = document.getElementsByClassName('radio-buttons');
-let computerCharacter = document.getElementsByClassName('radio-buttons');
+
 let weapons = document.getElementsByClassName('weapon');
 const start = document.getElementById('get-ready-button');
 const weaponChoices = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -46,9 +45,30 @@ start.addEventListener("click", function (event) {
     runGame(enterName, playerCharacter);
 });
 
+// Get the radio buttons by their ID
+var playerCharacter = document.getElementById('radio-buttons');
+
+// Get the span element
+var resultPlayerSpan = document.getElementById("player-name-zone");
+var resultCompSpan = document.getElementById("computer-name-zone");
+
+// Add event listener to each radio button
+for (var i = 0; i < playerCharacter.length; i++) {
+    playerCharacter[i].addEventListener("change", function () {
+        // Check which radio button is selected
+        for (var j = 0; j < playerCharacter.length; j++) {
+            if (playerCharacter[j].checked) {
+                // Set the selected radio button value to the span element
+                resultSpan.textContent = radioButtons[j].value;
+                break;
+            }
+        }
+    });
+}
+
 // The main game 'loop'
 function runGame(enterName, playerCharacter) {
-    // add event listeners to game tiles
+    // Add event listener to weapon tiles
     // call function to tell user to select a tile, and set round number to 1
     // end rungame
     // user selects tile
