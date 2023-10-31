@@ -45,12 +45,11 @@ start.addEventListener("click", function (event) {
     runGame(enterName, playerCharacter);
 });
 
-// Get the radio buttons by their ID
-var playerCharacter = document.getElementById('radio-buttons');
+// Get the radio buttons by their class name
+var playerCharacter = document.getElementsByClassName('radio-buttons');
 
 // Get the span element
 var resultPlayerSpan = document.getElementById("player-name-zone");
-var resultCompSpan = document.getElementById("computer-name-zone");
 
 // Add event listener to each radio button
 for (var i = 0; i < playerCharacter.length; i++) {
@@ -59,7 +58,7 @@ for (var i = 0; i < playerCharacter.length; i++) {
         for (var j = 0; j < playerCharacter.length; j++) {
             if (playerCharacter[j].checked) {
                 // Set the selected radio button value to the span element
-                resultSpan.textContent = radioButtons[j].value;
+                resultPlayerSpan.textContent = playerCharacter[j].value;
                 break;
             }
         }
