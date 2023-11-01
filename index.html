@@ -110,7 +110,7 @@
         </form>
 
         <!-- Weapons of choice -->
-        <div class="weapons-div">
+        <!-- <div class="weapons-div">
           <h3>Choose your weapon</h3>
           <button aria-label="rock" class="weapon" data-choice="0">
             <i
@@ -150,8 +150,14 @@
               data-choice="4"
             ></i>
           </button>
+        </div> -->
+        <div id="weapon-container">
+            <div class="weapon" id="rock" data-choice="rock"></div>
+            <div class="weapon" id="paper"></div>
+            <div class="weapon" id="scissors"></div>
+            <div class="weapon" id="lizard"></div>
+            <div class="weapon" id="spock"></div>
         </div>
-
         <!-- Score board and game result -->
         <div class="score-board">
           <h3>SCORE BOARD</h3>
@@ -177,7 +183,9 @@
         </div>
       </section>
     </main>
+    <div id="test">
 
+    </div>
     <!-- footer -->
     <footer>
       <p id="game-rules">Game Rules</p>

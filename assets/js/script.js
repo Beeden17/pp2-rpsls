@@ -99,9 +99,15 @@ function playerHandSelection(event) {
     event.stopPropagation();
     console.log('playerHandSelection1');
     console.log(event);
-    console.log(event.target.attributes[2].value);
-    let playerHand = event.target.attributes[2].value;
+    console.log(event.target.id);
+    // console.log(event.target.attributes[2].value);
+    // let playerHand = event.target.attributes[2].value;
     removeGameEventListeners();
+    let playerHand = event.target.id;
+    let compHand = computerHandSelection();
+    let winner = roundWinner(playerHand, compHand);
+    console.log(compHand);
+    console.log(winner);
     // captured value of player hand, needs passing to game logic function
 }
 function addGameEventListeners() {
@@ -144,10 +150,9 @@ function runGame(name, playerIcon) {
     console.log(name);
     console.log(playerIcon);
     updatePlayerDetails(name, playerIcon);
+    // Add event listener to weapon tiles
     addGameEventListeners();
     computerPlayerIcon();
-    // Add event listener to weapon tiles
-    playerHandSelection();
     // call function to tell user to select a tile, and set round number to 1
     // end rungame
     // user selects tile
