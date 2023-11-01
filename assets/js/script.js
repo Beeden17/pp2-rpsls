@@ -22,12 +22,6 @@ const resetButton = document.getElementsByClassName('reset-button');
 // Set curser to be already in the answer box, from love maths
 document.getElementById("usersname").focus();
 
-// // Event listener to add custom name to player zone
-// enterName.addEventListener('input', function () {
-//     const userInput = enterName.value;
-//     customPlayerName.textContent = `${userInput}`;
-// });
-
 //Allow user to use enter key to be READY! from love maths project
 // start.addEventListener("keydown", function (event) {
 //     event.preventDefault();
@@ -60,9 +54,19 @@ start.addEventListener("click", function (event) {
 // Get the radio buttons by their class name
 var playerCharacter = document.getElementsByClassName('radio-buttons');
 
+// Generate computer Icon random
+function computerPlayerIcon() {
+    const computerIconIndex = Math.floor(Math.random() * playerCharacter.length);
+    const computerIcon = playerCharacter[computerIconIndex].value;
+    let displayComputerIcon = document.getElementById('computer-chosen');
+    displayComputerIcon.textContent = computerIcon;
+    console.log(computerPlayerIcon);
+}
+
 // Get the span element
 var resultPlayerSpan = document.getElementById("player-name-zone");
 
+// Get the player name and selected player character
 function updatePlayerDetails(name, playerIcon) {
     customPlayerName.innerText = name;
     if (playerIcon == 'astronaut') {
@@ -94,6 +98,28 @@ function removeGameEventListeners() {
     }
 }
 
+// Generate computer random weapon choice
+function computerHandSelection() {
+    const computerHandSelectionIndex = Math.floor(Math.random() * weaponChoices.length);
+    return weaponChoices[computerHandSelectionIndex];
+}
+
+function determineRoundWinner(playerHandSelection, computerHandSelection) {
+    if (playerHandSelection === computerHandSelection) {
+        return "draw";
+    } else if (
+        (playerHandSelection === "rock" && (computerHandSelection === "scissors" || computerHandSelection === "lizard")) ||
+        (playerHandSelection === "paper" && (computerHandSelection === "rock" || computerHandSelection === "Spock")) ||
+        (playerHandSelection === "scissors" && (computerHandSelection === "paper" || computerHandSelection === "lizard")) ||
+        (playerHandSelection === "lizard" && (computerHandSelection === "Spock" || computerHandSelection === "paper")) ||
+        (playerHandSelection === "Spock" && (computerHandSelection === "rock" || computerHandSelection === "scissors"))
+    ) {
+        return "player";
+    } else {
+        return "computer";
+    }
+}
+
 // The main game 'loop'
 function runGame(name, playerIcon) {
     console.log('runGame');
@@ -101,6 +127,7 @@ function runGame(name, playerIcon) {
     console.log(playerIcon);
     updatePlayerDetails(name, playerIcon);
     addGameEventListeners();
+    computerPlayerIcon();
     // Add event listener to weapon tiles
     // call function to tell user to select a tile, and set round number to 1
     // end rungame
@@ -112,21 +139,6 @@ function runGame(name, playerIcon) {
     // call function to see who won the hand
     // display who won game( seperate function)
     // function to count round winners, who won the match
-
-}
-
-// Adds chosen character as icon
-function playerIcon() {
-
-}
-
-// Generate computer random weapon choice
-function computerChooses() {
-
-}
-
-// Generate computer player random
-function computerIcon() {
 
 }
 

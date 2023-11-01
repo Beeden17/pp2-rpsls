@@ -31,6 +31,8 @@ button {
     padding: 10px 25px;
     cursor: pointer;
     transition: 100ms;
+    position: relative;
+    z-index: 9999;
 }
 
 /* prevent from clicking on the weapon icon but still listening for event*/
