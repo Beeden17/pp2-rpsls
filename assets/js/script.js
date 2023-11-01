@@ -88,6 +88,7 @@ function updatePlayerDetails(name, playerIcon) {
     }
 }
 
+// Add event listener when the weapon tiles are selected, this will start the game
 function playerHandSelection(event) {
     event.stopPropagation();
     console.log('playerHandSelection1');
@@ -114,6 +115,7 @@ function computerHandSelection() {
     return weaponChoices[computerHandSelectionIndex];
 }
 
+// Check who has won the round
 function roundWinner(playerHandSelection, computerHandSelection) {
     if (playerHandSelection === computerHandSelection) {
         return "draw";
@@ -139,37 +141,66 @@ function runGame(name, playerIcon) {
     addGameEventListeners();
     computerPlayerIcon();
     // Add event listener to weapon tiles
+    playerHandSelection();
     // call function to tell user to select a tile, and set round number to 1
     // end rungame
     // user selects tile
     // function to capture what is selected
     // call random computer selection
+    computerHandSelection();
     // capter computer selection
     // indicate to user the computer selection,
     // call function to see who won the hand
+    checkWinner();
     // display who won game( seperate function)
+    incrementPlayerScore();
+    incrementComputerScore();
+    incrementRound();
     // function to count round winners, who won the match
 
 }
 
 function checkWinner() {
+    let playerScoreValue = parseInt(playerScore.innerText);
+    let computerScoreValue = parseInt(computerScore.innerText);
 
+    if (playerScoreValue >= 3) {
+        matchWinner.innerText = "Congratulations! You win the match! Press RESET to start again";
+        resetButton[0].style.display = 'block';
+        removeGameEventListeners();
+    } else if (computerScoreValue >= 3) {
+        matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET to start again";
+        resetButton[0].style.display = 'block';
+        removeGameEventListeners();
+    }
 }
 
 function incrementPlayerScore() {
-
+    let currentScore = parseInt(playerScore.innerText);
+    playerScore.innerText = currentScore + 1;
+    checkWinner();
 }
 
 function incrementComputerScore() {
-
+    let currentScore = parseInt(computerScore.innerText);
+    computerScore.innerText = currentScore + 1;
+    checkWinner();
 }
 
 function incrementRound() {
+    let currentRound = parseInt(gameRound.innerText);
+    gameRound.innerText = currentRound + 1;
 
 }
 
+// resets the game when reset button is clicked
 function resetPositive() {
-
+    playerScore.innerText = "0";
+    computerScore.innerText = "0";
+    gameRound.innerText = "1";
+    matchWinner.innerText = "";
+    resetButton[0].style.display = 'none';
+    addGameEventListeners();
 }
 
 function result() {
