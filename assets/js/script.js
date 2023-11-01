@@ -96,7 +96,6 @@ function updatePlayerDetails(name, playerIcon) {
 
 // Add event listener when the weapon tiles are selected, this will start the game
 function playerHandSelection(event) {
-    event.stopPropagation();
     console.log('playerHandSelection1');
     console.log(event);
     console.log(event.target.id);
