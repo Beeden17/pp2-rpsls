@@ -23,13 +23,13 @@ const resetButton = document.getElementsByClassName('reset-button');
 document.getElementById("usersname").focus();
 
 //Allow user to use enter key to be READY! from love maths project
-// start.addEventListener("keydown", function (event) {
-//     event.preventDefault();
-//     if (event.key === "Enter") {
-//         runGame();
+start.addEventListener("keydown", function (event) {
+   event.preventDefault();
+   if (event.key === "Enter") {
+       runGame();
 
-//     }
-// });
+}
+});
 
 // Click event listener
 start.addEventListener("click", function (event) {
