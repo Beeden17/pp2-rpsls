@@ -8,7 +8,7 @@
 console.log('start');
 let enterName = document.getElementById('usersname');
 let customPlayerName = document.getElementById('player-name-zone');
-let customPlayerIcon = document.getElementById('user-chosen');
+let customPlayerIcon = document.getElementById('user-chosen-icon');
 let weapons = document.getElementsByClassName('weapon');
 const start = document.getElementById('get-ready-button');
 const weaponChoices = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -59,7 +59,7 @@ function computerPlayerIcon() {
     const computerIconIndex = Math.floor(Math.random() * iconChoices.length);
     const computerIcon = iconChoices[computerIconIndex];
 
-    let displayComputerIcon = document.getElementById('computer-chosen');
+    let displayComputerIcon = document.getElementById('computer-chosen-icon');
 
     if (computerIcon === 'astronaut') {
         displayComputerIcon.innerHTML = '<i class="fa-solid fa-user-astronaut"></i>';
@@ -151,6 +151,7 @@ function runGame(name, playerIcon) {
     // capter computer selection
     // indicate to user the computer selection,
     // call function to see who won the hand
+    roundWinner();
     checkWinner();
     // display who won game( seperate function)
     incrementPlayerScore();
