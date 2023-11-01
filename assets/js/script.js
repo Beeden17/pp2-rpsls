@@ -34,7 +34,6 @@ start.addEventListener("keydown", function (event) {
 // Click event listener
 start.addEventListener("click", function (event) {
     event.preventDefault();
-    // Validate user input here!!!
     // Grab user details
     let name = event.target.form[0].value;
     let playerIcon;
@@ -46,6 +45,13 @@ start.addEventListener("click", function (event) {
         playerIcon = 'ghost';
     } else {
         playerIcon = 'astronaut';
+    }
+    // Validate user input here!!!
+    if (name.length >= 2 && name.length <= 10 && !/\s/.test(name)){
+        alert('Choose a weapon!');
+    } else {
+        // Invalid player name, display an error message with instructions
+        alert('Invalid player name! Please enter a name with 2 to 10 characters and no spaces.');
     }
     console.log(event);
     runGame(name, playerIcon);
