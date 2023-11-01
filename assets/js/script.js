@@ -56,11 +56,21 @@ var playerCharacter = document.getElementsByClassName('radio-buttons');
 
 // Generate computer Icon random
 function computerPlayerIcon() {
-    const computerIconIndex = Math.floor(Math.random() * playerCharacter.length);
-    const computerIcon = playerCharacter[computerIconIndex].value;
+    const computerIconIndex = Math.floor(Math.random() * iconChoices.length);
+    const computerIcon = iconChoices[computerIconIndex];
+
     let displayComputerIcon = document.getElementById('computer-chosen');
-    displayComputerIcon.textContent = computerIcon;
-    console.log(computerPlayerIcon);
+
+    if (computerIcon === 'astronaut') {
+        displayComputerIcon.innerHTML = '<i class="fa-solid fa-user-astronaut"></i>';
+    } else if (computerIcon === 'dragon') {
+        displayComputerIcon.innerHTML = '<i class="fa-solid fa-dragon"></i>';
+    } else if (computerIcon === 'ghost') {
+        displayComputerIcon.innerHTML = '<i class="fa-solid fa-ghost"></i>';
+    }
+
+    // Return the chosen computer icon
+    return computerIcon;
 }
 
 // Get the span element
@@ -104,7 +114,7 @@ function computerHandSelection() {
     return weaponChoices[computerHandSelectionIndex];
 }
 
-function determineRoundWinner(playerHandSelection, computerHandSelection) {
+function roundWinner(playerHandSelection, computerHandSelection) {
     if (playerHandSelection === computerHandSelection) {
         return "draw";
     } else if (
