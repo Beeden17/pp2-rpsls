@@ -24,11 +24,11 @@ document.getElementById("usersname").focus();
 
 //Allow user to use enter key to be READY! from love maths project
 start.addEventListener("keydown", function (event) {
-   event.preventDefault();
-   if (event.key === "Enter") {
-       runGame();
+    event.preventDefault();
+    if (event.key === "Enter") {
+        runGame();
 
-}
+    }
 });
 
 // Click event listener
@@ -47,7 +47,7 @@ start.addEventListener("click", function (event) {
         playerIcon = 'astronaut';
     }
     // Validate user input here!!!
-    if (name.length >= 2 && name.length <= 10 && !/\s/.test(name)){
+    if (name.length >= 2 && name.length <= 10 && !/\s/.test(name)) {
         alert('Choose a weapon!');
     } else {
         // Invalid player name, display an error message with instructions
@@ -201,6 +201,7 @@ function incrementComputerScore() {
 function incrementRound() {
     let currentRound = parseInt(gameRound.innerText);
     gameRound.innerText = currentRound + 1;
+    removeGameEventListeners();
 
 }
 
@@ -208,7 +209,7 @@ function incrementRound() {
 function resetPositive() {
     playerScore.innerText = "0";
     computerScore.innerText = "0";
-    gameRound.innerText = "1";
+    gameRound.innerText = "0";
     matchWinner.innerText = "";
     resetButton[0].style.display = 'none';
     addGameEventListeners();
