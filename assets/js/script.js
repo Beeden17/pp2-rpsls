@@ -5,7 +5,6 @@
 * declare variables for computer character
 * declare variables for weapon selection
 */
-console.log('start');
 let enterName = document.getElementById('usersname');
 let customPlayerName = document.getElementById('player-name-zone');
 let customPlayerIcon = document.getElementById('user-chosen-icon');
@@ -16,9 +15,9 @@ const iconChoices = ["astronaut", "dragon", "ghost"];
 var gameRound = document.getElementById('round-number');
 var playerScore = document.getElementById('user-score');
 let computerScore = document.getElementById('computer-score');
-let matchWinner = document.getElementById('the-winner-is');
 const resetButton = document.getElementsByClassName('reset-button');
-
+// Store round winner as global variable
+let winner = "";
 // Set curser to be already in the answer box, from love maths
 document.getElementById("usersname").focus();
 
@@ -148,54 +147,75 @@ function runGame(name, playerIcon) {
     console.log('runGame');
     console.log(name);
     console.log(playerIcon);
-    updatePlayerDetails(name, playerIcon);
+    // Store player's selection
+    let playerHand = "";
+    // Store computer's selection
+    let compHand = "";
+
     // Add event listener to weapon tiles
     addGameEventListeners();
-    computerPlayerIcon();
-    // call function to tell user to select a tile, and set round number to 1
-    // end rungame
-    // user selects tile
-    // function to capture what is selected
-    // call random computer selection
-    computerHandSelection();
-    // capter computer selection
-    // indicate to user the computer selection,
-    // call function to see who won the hand
-    roundWinner();
-    checkWinner();
-    // display who won game( seperate function)
-    incrementPlayerScore();
-    incrementComputerScore();
-    incrementRound();
-    // function to count round winners, who won the match
 
+    // Function to capture player's selection
+    function capturePlayerSelection(event) {
+        playerHand = event.target.id;
+        removeGameEventListeners();
+        // Get computer's selection
+        compHand = computerHandSelection();
+        console.log(playerHand);
+        console.log(compHand);
+        // Determine the round winner
+        winner = roundWinner(playerHand, compHand);
+        console.log(winner);
+
+        // Call other functions and update UI based on the round winner
+        checkWinner(winner);
+        incrementPlayerScore(winner);
+        incrementComputerScore(winner);
+        incrementRound();
+    }
+
+    // Add event listener to capture player's selection
+    for (let weapon of weapons) {
+        weapon.addEventListener('click', capturePlayerSelection);
+    }
+
+    // Update player details and computer's icon
+    updatePlayerDetails(name, playerIcon);
+    computerPlayerIcon();
 }
 
-function checkWinner() {
+// MatchWinner variable to store the value
+let matchWinner = '';
+
+function checkWinner(winner) {
     let playerScoreValue = parseInt(playerScore.innerText);
     let computerScoreValue = parseInt(computerScore.innerText);
 
     if (playerScoreValue >= 3) {
-        matchWinner.innerText = "Congratulations! You win the match! Press RESET to start again";
+        matchWinner = "Congratulations! You win the match! Press RESET to start again";
         resetButton[0].style.display = 'block';
         removeGameEventListeners();
     } else if (computerScoreValue >= 3) {
-        matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET to start again";
+        matchWinner = "Computer wins the match. Better luck next time! Press RESET to start again";
         resetButton[0].style.display = 'block';
         removeGameEventListeners();
     }
 }
 
 function incrementPlayerScore() {
-    let currentScore = parseInt(playerScore.innerText);
-    playerScore.innerText = currentScore + 1;
-    checkWinner();
+    if (winner === 'player') {
+        let currentScore = parseInt(playerScore.innerText);
+        playerScore.innerText = currentScore + 1;
+    }
+    checkWinner(winner);
 }
 
 function incrementComputerScore() {
-    let currentScore = parseInt(computerScore.innerText);
-    computerScore.innerText = currentScore + 1;
-    checkWinner();
+    if (winner === 'computer') {
+        let currentScore = parseInt(computerScore.innerText);
+        computerScore.innerText = currentScore + 1;
+    }
+    checkWinner(winner);
 }
 
 function incrementRound() {
