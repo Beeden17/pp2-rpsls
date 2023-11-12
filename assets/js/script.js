@@ -198,13 +198,14 @@ document.addEventListener('DOMContentLoaded', function () {
             resetButton.style.display = 'block';
             removeGameEventListeners();
         }
-        resetPositive();
     }
 
     function incrementPlayerScore(winner) {
         if (winner === 'player') {
             let currentScore = parseInt(playerScore.innerText);
-            playerScore.innerText = currentScore + 1;
+            let incrementedScore = currentScore + 1;
+            playerScore.innerText = incrementedScore;
+            console.log(incrementedScore);
         }
         checkWinner(winner);
     }
