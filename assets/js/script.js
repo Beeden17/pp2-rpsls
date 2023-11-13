@@ -191,11 +191,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (playerScoreValue >= 3) {
             matchWinner = "Congratulations! You win the match! Press RESET to start again";
-            resetButton.style.display = 'block';
+            resetButton.style.backgroundColor = 'rgb(50, 150, 50)';
             removeGameEventListeners();
         } else if (computerScoreValue >= 3) {
             matchWinner = "Computer wins the match. Better luck next time! Press RESET to start again";
-            resetButton.style.display = 'block';
+            resetButton.style.backgroundColor = 'rgb(50, 150, 50)';
             removeGameEventListeners();
         }
     }
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
         computerScore.innerText = "0";
         gameRound.innerText = "0";
         matchWinner.innerText = "";
-        resetButton.style.display = 'none';
+        resetButton.style.backgroundColor = 'rgb(50, 150, 50)';
         addGameEventListeners();
     }
 
