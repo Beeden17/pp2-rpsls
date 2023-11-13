@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    // MatchWinner variable to store the value
+    // MatchWinner variable to prompt use and display winner
     let matchWinner = document.getElementById("the-winner-is");
 
     function checkWinner(winner) {
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
         playerScore.innerText = "0";
         computerScore.innerText = "0";
         gameRound.innerText = "0";
-        matchWinner.innerText = "";
+        matchWinner.innerText = "THE WINNER IS FIRST TO SCORE 3!";
         resetButton.style.backgroundColor = 'rgb(50, 150, 50)';
         addGameEventListeners();
     }
