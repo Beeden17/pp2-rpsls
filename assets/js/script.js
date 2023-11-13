@@ -183,18 +183,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // MatchWinner variable to store the value
-    let matchWinner = '';
+    let matchWinner = document.getElementById("the-winner-is");
 
     function checkWinner(winner) {
         let playerScoreValue = parseInt(playerScore.innerText);
         let computerScoreValue = parseInt(computerScore.innerText);
 
-        if (playerScoreValue >= 3) {
-            matchWinner = "Congratulations! You win the match! Press RESET to start again";
-            resetButton.style.backgroundColor = 'rgb(50, 150, 50)';
-            removeGameEventListeners();
-        } else if (computerScoreValue >= 3) {
-            matchWinner = "Computer wins the match. Better luck next time! Press RESET to start again";
+        if (playerScoreValue >= 3 || computerScoreValue >= 3) {
+            if (playerScoreValue > computerScoreValue) {
+                matchWinner.innerText = "Congratulations! You win the match! Press RESET to start again";
+            } else if (computerScoreValue > playerScoreValue) {
+                matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET to start again";
+            } else {
+                matchWinner.innerText = "It's a draw. Press RESET to start again";
+            }
+
             resetButton.style.backgroundColor = 'rgb(50, 150, 50)';
             removeGameEventListeners();
         }
