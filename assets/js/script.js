@@ -130,10 +130,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return "draw";
         } else if (
             (playerHandSelection === "rock" && (computerHandSelection === "scissors" || computerHandSelection === "lizard")) ||
-            (playerHandSelection === "paper" && (computerHandSelection === "rock" || computerHandSelection === "Spock")) ||
+            (playerHandSelection === "paper" && (computerHandSelection === "rock" || computerHandSelection === "spock")) ||
             (playerHandSelection === "scissors" && (computerHandSelection === "paper" || computerHandSelection === "lizard")) ||
-            (playerHandSelection === "lizard" && (computerHandSelection === "Spock" || computerHandSelection === "paper")) ||
-            (playerHandSelection === "Spock" && (computerHandSelection === "rock" || computerHandSelection === "scissors"))
+            (playerHandSelection === "lizard" && (computerHandSelection === "spock" || computerHandSelection === "paper")) ||
+            (playerHandSelection === "spock" && (computerHandSelection === "rock" || computerHandSelection === "scissors"))
         ) {
             return "player";
         } else {
@@ -236,9 +236,5 @@ document.addEventListener('DOMContentLoaded', function () {
         matchWinner.innerText = "";
         resetButton.style.backgroundColor = 'rgb(50, 150, 50)';
         addGameEventListeners();
-    }
-
-    function result() {
-
     }
 });
