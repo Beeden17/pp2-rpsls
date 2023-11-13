@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var playerScore = document.getElementById('user-score');
     let computerScore = document.getElementById('computer-score');
     const resetButton = document.getElementById('reset-button');
+    let displayComputerHand = document.getElementById('display-computer-weapon');
+    let displayPlayerHand = document.getElementById('display-user-weapon');
     // Store round winner as global variable
     let winner = "";
     // Set curser to be already in the answer box, from love maths
@@ -97,15 +99,12 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('playerHandSelection1');
         console.log(event);
         console.log(event.target.id);
-        // console.log(event.target.attributes[2].value);
-        // let playerHand = event.target.attributes[2].value;
         removeGameEventListeners();
         let playerHand = event.target.id;
         let compHand = computerHandSelection();
         let winner = roundWinner(playerHand, compHand);
         console.log(compHand);
         console.log(winner);
-        // captured value of player hand, needs passing to game logic function
     }
     function addGameEventListeners() {
         for (let weapon of weapons) {
@@ -169,6 +168,9 @@ document.addEventListener('DOMContentLoaded', function () {
             compHand = computerHandSelection();
             console.log(playerHand);
             console.log(compHand);
+            // Display selected choices in game panel
+            displayPlayerHand.innerHTML = `${playerHand}`;
+            displayComputerHand.innerHTML = `${compHand}`;
             // Determine the round winner
             winner = roundWinner(playerHand, compHand);
             console.log(winner);
@@ -236,6 +238,8 @@ document.addEventListener('DOMContentLoaded', function () {
         playerScore.innerText = "0";
         computerScore.innerText = "0";
         gameRound.innerText = "0";
+        displayPlayerHand.innerText = '';
+        displayComputerHand.innerText = '';
         matchWinner.innerText = "THE WINNER IS FIRST TO SCORE 3!";
         resetButton.style.backgroundColor = 'rgb(50, 150, 50)';
         addGameEventListeners();
