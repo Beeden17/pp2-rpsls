@@ -22,17 +22,21 @@ h1 {
     height: 100%;
 }
 
+/* Push radio buttons up */
+.radio-buttons {
+    padding-bottom: 5%;
+}
+
 button {
-    background: none;
-    border: rgb(50, 150, 50);
+    background-color: rgb(50, 150, 50);
     border-radius: 5px;
-    color: #fff;
+    color: #673cab;
     font-size: 14px;
     padding: 10px 25px;
     cursor: pointer;
     transition: 100ms;
     position: relative;
-    z-index: 9999;
+    z-index: 99;
 }
 
 /* prevent from clicking on the weapon icon but still listening for event*/
@@ -83,6 +87,12 @@ footer {
     background-color: black;
 }
 
+/* Push down weapons div to space evenly */
+#weapon-container {
+    padding-top: 2%;
+    justify-content: space-evenly;
+}
+
 #spock {
     cursor: pointer;
     transition: 100ms;
@@ -92,6 +102,7 @@ footer {
 
 #spock:hover {
     transform: scale(1.5);
+    z-index: 999;
 }
 
 #lizard {
@@ -103,6 +114,7 @@ footer {
 
 #lizard:hover {
     transform: scale(1.5);
+    z-index: 999;
 }
 
 #scissors {
@@ -114,6 +126,7 @@ footer {
 
 #scissors:hover {
     transform: scale(1.5);
+    z-index: 999;
 }
 
 #paper {
@@ -125,6 +138,7 @@ footer {
 
 #paper:hover {
     transform: scale(1.5);
+    z-index: 999;
 }
 
 #rock {
@@ -136,4 +150,5 @@ footer {
 
 #rock:hover {
     transform: scale(1.5);
+    z-index: 999;
 }
