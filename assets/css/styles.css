@@ -30,8 +30,9 @@ h1 {
 button {
     background-color: rgb(50, 150, 50);
     border-radius: 5px;
-    color: #673cab;
+    color: black;
     font-size: 14px;
+    font-weight: bold;
     padding: 10px 25px;
     cursor: pointer;
     transition: 100ms;
