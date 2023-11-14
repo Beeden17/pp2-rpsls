@@ -27,7 +27,7 @@
 
   <body>
     <header>
-      <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+      <h1>Rock, Paper, Scissors, Lizard, Spock Game</h1>
     </header>
 
     <main>
@@ -90,7 +90,7 @@
             />
           </div>
           <button
-            aria-label="get-ready"
+            aria-label="get-ready-button"
             data-type="submit"
             id="get-ready-button"
           >
@@ -119,12 +119,16 @@
         </div>
         <!-- Score board and game result -->
         <div class="score-board">
+          <h2 id="the-winner-is">THE WINNER IS FIRST TO SCORE 3!</h2>
           <h3>SCORE BOARD</h3>
           <p>ROUND: <span id="round-number">0</span></p>
-          <h2 id="the-winner-is">THE WINNER IS FIRST TO SCORE 3!</h2>
           <p>User score: <span id="user-score">0</span></p>
           <p>Computer score: <span id="computer-score">0</span></p>
-          <button aria-label="reset" type="submit" id="reset-button">
+          <button
+            aria-label="reset-scores-button"
+            type="submit"
+            id="reset-button"
+          >
             RESET SCORES!
           </button>
         </div>
