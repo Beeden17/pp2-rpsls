@@ -1,7 +1,15 @@
 /* --------- Global style */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
 
 body {
     font-family: 'Comic Neue', cursive;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     margin: auto 0;
     color: white;
     text-align: center;
@@ -10,6 +18,7 @@ body {
 
 h1 {
     background-color: black;
+    color: rgb(50, 150, 50);
     width: 100%;
     text-align: center;
     margin: auto 0;
@@ -20,6 +29,7 @@ h1 {
     background-image: url(../images/pp2-cosmic-background/vecteezy_abstract-space-galaxy-view-with-blue-pink-cloud_16265607.jpg);
     width: 100%;
     height: 100%;
+    flex: 1;
 }
 
 /* Push radio buttons up */
@@ -86,6 +96,9 @@ button:hover {
 
 footer {
     background-color: black;
+    margin-top: auto;
+    color: rgb(50, 150, 50);
+    font-weight: bold;
 }
 
 /* Push down weapons div to space evenly */
@@ -152,4 +165,25 @@ footer {
 #rock:hover {
     transform: scale(1.5);
     z-index: 999;
+}
+
+/* split game zone, side by side */
+.user-game-zone {
+    background-color: black;
+    float: left;
+    margin-left: 5%;
+    width: 40%;
+    border-radius: 5px;
+    border: 2px solid rgb(50, 150, 50);
+    color: rgb(50, 150, 50);
+}
+
+.computer-game-zone {
+    background-color: black;
+    float: right;
+    margin-right: 5%;
+    width: 40%;
+    border-radius: 5px;
+    border: 2px solid rgb(50, 150, 50);
+    color: rgb(50, 150, 50);
 }

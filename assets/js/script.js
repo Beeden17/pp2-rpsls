@@ -99,12 +99,12 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('playerHandSelection1');
         console.log(event);
         console.log(event.target.id);
-        removeGameEventListeners();
         let playerHand = event.target.id;
         let compHand = computerHandSelection();
         let winner = roundWinner(playerHand, compHand);
         console.log(compHand);
         console.log(winner);
+        removeGameEventListeners();
     }
     function addGameEventListeners() {
         for (let weapon of weapons) {
