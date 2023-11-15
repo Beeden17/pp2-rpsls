@@ -189,11 +189,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (playerScoreValue >= 3 || computerScoreValue >= 3) {
             if (playerScoreValue > computerScoreValue) {
-                matchWinner.innerText = "Congratulations! You win the match! Press RESET to start again";
+                matchWinner.innerText = "Congratulations! You win the match! Press RESET SCORES! to start again";
             } else if (computerScoreValue > playerScoreValue) {
-                matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET to start again";
+                matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET SCORES! to start again";
             } else {
-                matchWinner.innerText = "It's a draw. Press RESET to start again";
+                matchWinner.innerText = "It's a draw. Press RESET SCORES! to start again";
             }
 
             resetButton.style.backgroundColor = 'rgb(50, 150, 50)';

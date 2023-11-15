@@ -148,6 +148,7 @@ footer {
     background-color: black;
     float: left;
     margin-left: 5%;
+    padding-top: 5px;
     width: 40%;
     border-radius: 5px;
     border: 2px solid rgb(50, 150, 50);
@@ -158,6 +159,7 @@ footer {
     background-color: black;
     float: right;
     margin-right: 5%;
+    padding-top: 5px;
     width: 40%;
     border-radius: 5px;
     border: 2px solid rgb(50, 150, 50);
