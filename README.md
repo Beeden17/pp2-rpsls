@@ -1,17 +1,12 @@
 # Rock, Paper, Scissors, Lizard, Spock Game
 
-I have decided to create a Rock, Paper, Scissors, Lizard, Spock game (R-P-S-L-S) which introduces a cosmic theme with multiple interactive features to allow the user to personalise the game which I hope they will enjoy.
+I have decided to create a Rock, Paper, Scissors, Lizard, Spock game (R-P-S-L-S) which introduces a cosmic theme with multiple interactive features to allow the user to personalise the game to their liking which I hope they will enjoy.
 
-Firstly the site will have a text area that allows the user to input a name, which includes form validation. The name entered will then be displayed in the "Game Zone", along with a player icon from the Choose Character section. The computer will also generate a random Icon to be displayed in the computer's own "Game Zone".
+R-P-S-L-S Game is a site that hopes to demonstrate how pure JavaScript works in a real-world context. The site will be targeted toward people who not only love to implement more advanced JavaScript concepts but also play games. R-P-S-L-S is a fully responsive JavaScript game that will allow users to play a game of luck against the computer.
 
-
-For example, Love Maths is a site that hopes to demonstrate how pure JavaScript works in a real-world context. The site will be targeted toward people who not only love to implement more advanced JavaScript concepts but also maths. Love Maths is a fully responsive JavaScript maths game that will allow users to add, subtract, multiply and divide numbers.
-
-![Responsice Mockup]()
+![Responsive Mockup]()
 
 ## Features
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so. You will need to explain what value each of the features provides for the user, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 ### Existing Features
 
@@ -19,28 +14,31 @@ In this section, you should go over the different parts of your project, and des
 
   - Featured at the top of the page, the R-P-S-L-S Game heading is easy to see for the user. Upon viewing the page, the user will be able to see the name of the game.
 
-![Logo]()
+![Heading]()
+
+- __The Input section__
+
+  - Firstly the site will have a text area that allows the user to input a name, which includes form validation. The name entered will then be displayed in the "Game Zone".
+  - Secondly the user can select an icon from the Choose Character section to be displayed. The computer will also generate a random Icon to be displayed in the computer's own "Game Zone".
+  - Thirdly, a "Get Ready" button to submit the data and start the game, the user will then be alerted to select a weapon.
+
+![Input]()
 
 - __The Game Area__
 
   - This section will allow the user to play the game. The user will be able to easily see icons for each available weapon and a pointer cursor will be visible when hovered over, the icon will also grow.
-  - The user will be able to see the option they have chosen along with the random generated weapon that the computer chooses as they will be displayed as text in the panels.
+  - The user will be able to see the option they have chosen along with the random generated weapon that the computer chooses as they will be displayed as text in the "Game Zone" panels.
   - The round will increment after each selection and the scores will increment depending on who wins, if its a draw there will be no increment in the score.
 
-![Game](media/love_maths_icons.png)
-
-- __The Question section__
-
-  - The question section is where the user will be able to see the elementary arithmetic question to answer as part of the game. The user will be able answer the questions in the answer box provide
-  - The user will be able to submit their answer and a pop-up will make it known to the user if they answered correctly.
-
-![Question](media/love_maths_question.png)
+![Game]()
 
 - __The Score Area__
 
-  - This section will allow the user to see exactly how many correct and incorrect answers they have provided.
+  - This section will allow the user to see exactly how many rounds they have played and what the scores are.
+  - This section will have inntructions that the winner will be the first to score 3, whoever scores 3 first the user will see the diplay showing who the winner is.
+  - This section will also have a reset scores button to allow user to reset the score and round to 0.
 
-![score](media/love_maths_answer.png)
+![score]()
 
 For some/all of your features, you may choose to reference the specific project files that implement them.
 
@@ -48,7 +46,9 @@ In addition, you may also use this section to discuss plans for additional featu
 
 ### Features Left to Implement
 
-- Another feature idea
+- Add more weapons to add to the complexity.
+- Add more player characters to allow more customization.
+- Add more players to the game.
 
 ## Testing
 
