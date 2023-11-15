@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     * declare variables for computer character
     * declare variables for weapon selection
     */
-    let enterName = document.getElementById('usersname');
     let customPlayerName = document.getElementById('player-name-zone');
     let customPlayerIcon = document.getElementById('user-chosen-icon');
     let weapons = document.getElementsByClassName('weapon');
@@ -59,9 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(event);
         runGame(name, playerIcon);
     });
-
-    // Get the radio buttons by their class name
-    var playerCharacter = document.getElementsByClassName('radio-buttons');
 
     // Generate computer Icon random
     function computerPlayerIcon() {
