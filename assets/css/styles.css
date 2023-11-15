@@ -70,12 +70,6 @@ button:hover {
     transform: scale(1.5);
 }
 
-footer {
-    background-color: black;
-    margin-top: auto;
-    color: rgb(50, 150, 50);
-    font-weight: bold;
-}
 
 /* Push down weapons div to space evenly */
 #weapon-container {
@@ -164,4 +158,12 @@ footer {
     border-radius: 5px;
     border: 2px solid rgb(50, 150, 50);
     color: rgb(50, 150, 50);
+}
+
+footer {
+    background-color: black;
+    height: 100%;
+    margin-top: none;
+    color: rgb(50, 150, 50);
+    font-weight: bold;
 }

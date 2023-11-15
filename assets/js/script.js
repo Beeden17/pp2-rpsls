@@ -96,11 +96,9 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(event);
         console.log(event.target.id);
         let playerHand = event.target.id;
-        let compHand = computerHandSelection();
-        let winner = roundWinner(playerHand, compHand);
-        console.log(compHand);
-        console.log(winner);
         removeGameEventListeners();
+        let compHand = computerHandSelection();
+        roundWinner(playerHand, compHand);
     }
     function addGameEventListeners() {
         for (let weapon of weapons) {
@@ -122,6 +120,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // Check who has won the round
     function roundWinner(playerHandSelection, computerHandSelection) {
         if (playerHandSelection === computerHandSelection) {
+            // no increment in score
+            // increment only round
+            // add draw message
+            // add time delay
+            // add event listener and remove return draw
             return "draw";
         } else if (
             (playerHandSelection === "rock" && (computerHandSelection === "scissors" || computerHandSelection === "lizard")) ||
@@ -130,8 +133,24 @@ document.addEventListener('DOMContentLoaded', function () {
             (playerHandSelection === "lizard" && (computerHandSelection === "spock" || computerHandSelection === "paper")) ||
             (playerHandSelection === "spock" && (computerHandSelection === "rock" || computerHandSelection === "scissors"))
         ) {
+            // increment player score
+            // increment round
+            // add you win round message
+            // add time delay
+            // check for overall winner
+            // if overall winner declare winner
+            // else 
+            // add event listener and remove return player
             return "player";
         } else {
+            // increment comp score
+            // increment round
+            // add you lose round message
+            // add time delay
+            // check for overall winner
+            // if overall winner declare you lost
+            // else
+            // add event listener and remove return computer
             return "computer";
         }
     }
@@ -144,39 +163,39 @@ document.addEventListener('DOMContentLoaded', function () {
         computerPlayerIcon();
         console.log(name);
         console.log(playerIcon);
-        // Store player's selection
-        let playerHand = "";
-        // Store computer's selection
-        let compHand = "";
+        // // Store player's selection
+        // let playerHand = "";
+        // // Store computer's selection
+        // let compHand = "";
 
         // Add event listener to weapon tiles
         addGameEventListeners();
 
-        // Add event listener to capture player's selection
-        for (let weapon of weapons) {
-            weapon.addEventListener('click', capturePlayerSelection);
-        }
-        // Function to capture player's selection
-        function capturePlayerSelection(event) {
-            playerHand = event.target.id;
-            removeGameEventListeners();
-            // Get computer's selection
-            compHand = computerHandSelection();
-            console.log(playerHand);
-            console.log(compHand);
-            // Display selected choices in game panel
-            displayPlayerHand.innerHTML = `${playerHand}`;
-            displayComputerHand.innerHTML = `${compHand}`;
-            // Determine the round winner
-            winner = roundWinner(playerHand, compHand);
-            console.log(winner);
+        // // Add event listener to capture player's selection
+        // for (let weapon of weapons) {
+        //     weapon.addEventListener('click', capturePlayerSelection);
+        // }
+        // // Function to capture player's selection
+        // function capturePlayerSelection(event) {
+        //     playerHand = event.target.id;
+        //     removeGameEventListeners();
+        //     // Get computer's selection
+        //     compHand = computerHandSelection();
+        //     console.log(playerHand);
+        //     console.log(compHand);
+        //     // Display selected choices in game panel
+        //     displayPlayerHand.innerHTML = `${playerHand}`;
+        //     displayComputerHand.innerHTML = `${compHand}`;
+        //     // Determine the round winner
+        //     winner = roundWinner(playerHand, compHand);
+        //     console.log(winner);
 
-            // Call other functions and update UI based on the round winner
-            checkWinner(winner);
-            incrementPlayerScore(winner);
-            incrementComputerScore(winner);
-            incrementRound();
-        }
+        //     // Call other functions and update UI based on the round winner
+        //     checkWinner(winner);
+        //     incrementPlayerScore(winner);
+        //     incrementComputerScore(winner);
+        //     incrementRound();
+        // }
 
     }
 
