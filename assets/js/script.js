@@ -89,15 +89,14 @@ document.addEventListener('DOMContentLoaded', function () {
             customPlayerIcon.innerHTML = '<i class="fa-solid fa-ghost"></i>';
         }
     }
-    let compHand = computerHandSelection();
-    let playerHand = event.target.id;
 
     // Add event listener when the weapon tiles are selected, this will start the game
     function playerHandSelection(event) {
         console.log('playerHandSelection1');
         console.log(event);
         console.log(event.target.id);
-
+        let playerHand = event.target.id;
+        let compHand = computerHandSelection();
         removeGameEventListeners();
 
         roundWinner(playerHand, compHand);
@@ -106,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let weapon of weapons) {
             weapon.addEventListener('click', playerHandSelection);
         }
+        matchWinner.innerText = 'Pick your hand';
     }
     function removeGameEventListeners() {
         for (let weapon of weapons) {
@@ -121,21 +121,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Check who has won the round
     function roundWinner(playerHandSelection, computerHandSelection) {
+        // Display selected choices in game panel
+        displayPlayerHand.innerHTML = `${playerHandSelection}`;
+        displayComputerHand.innerHTML = `${computerHandSelection}`;
         if (playerHandSelection === computerHandSelection) {
             // no increment in score
             // increment only round
             incrementRound();
-            // Display selected choices in game panel
-            displayPlayerHand.innerHTML = `${playerHand}`;
-            displayComputerHand.innerHTML = `${compHand}`;
             // add draw message
+            matchWinner.innerText = "It's a Draw, try again!";
             setTimeout(function () {
-                matchWinner.innerText = "It's a Draw, try again!";
                 // add time delay
-            }, 1000);
-            // add event listener and remove return draw
-            addGameEventListeners();
-            return "draw";
+                // add event listener and remove return draw
+                addGameEventListeners();
+            }, 2000);
+            // return "draw";
         } else if (
             (playerHandSelection === "rock" && (computerHandSelection === "scissors" || computerHandSelection === "lizard")) ||
             (playerHandSelection === "paper" && (computerHandSelection === "rock" || computerHandSelection === "spock")) ||
@@ -143,50 +143,45 @@ document.addEventListener('DOMContentLoaded', function () {
             (playerHandSelection === "lizard" && (computerHandSelection === "spock" || computerHandSelection === "paper")) ||
             (playerHandSelection === "spock" && (computerHandSelection === "rock" || computerHandSelection === "scissors"))
         ) {
-            // Display selected choices in game panel
-            displayPlayerHand.innerHTML = `${playerHand}`;
-            displayComputerHand.innerHTML = `${compHand}`;
             // increment player score
-            incrementPlayerScore(winner);
+            incrementPlayerScore();
             // increment round
             incrementRound();
             // add you win round message
             matchWinner.innerText = "You win this round, Well done!";
-            // add time delay
-            1000;
-            // check for overall winner
-            checkWinner(winner);
-            // if overall winner declare winner
-            if (playerScoreValue === '3') {
-                matchWinner.innerText = "Congratulations! You win the match! Press RESET SCORES! to start again";
-                // else 
-                // add event listener and remove return player
-            } else {
-                addGameEventListeners();
-            }
-            return "player";
+            setTimeout(function () {
+                // add time delay
+                // check for overall winner
+                let winner = checkWinner();
+                // if overall winner declare winner
+                if (winner) {
+                    matchWinner.innerText = "Congratulations! You win the match! Press RESET SCORES! to start again";
+                    // else 
+                    // add event listener and remove return player
+                } else {
+                    addGameEventListeners();
+                }
+            }, 2000);
         } else {
-            // Display selected choices in game panel
-            displayPlayerHand.innerHTML = `${playerHand}`;
-            displayComputerHand.innerHTML = `${compHand}`;
             // increment comp score
-            incrementComputerScore(winner);
+            incrementComputerScore();
             // increment round
             incrementRound();
             // add you lose round message
             matchWinner.innerText = "You lose this round, try again!";
-            // add time delay
-            // check for overall winner
-            checkWinner(winner);
-            // if overall winner declare you lost
-            if (computerScoreValue === '3') {
-                matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET SCORES! to start again";
-                // else
-                // add event listener and remove return computer
-            } else {
-                addGameEventListeners();
-            }
-            return "computer";
+            setTimeout(function () {
+                // add time delay
+                // check for overall winner
+                let winner = checkWinner();
+                // if overall winner declare you lost
+                if (winner) {
+                    matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET SCORES! to start again";
+                    // else
+                    // add event listener and remove return computer
+                } else {
+                    addGameEventListeners();
+                }
+            }, 2000);
         }
     }
 
@@ -237,44 +232,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // MatchWinner variable to prompt use and display winner
     let matchWinner = document.getElementById("the-winner-is");
 
-    function checkWinner(winner) {
+    function checkWinner() {
         let playerScoreValue = parseInt(playerScore.innerText);
         let computerScoreValue = parseInt(computerScore.innerText);
 
         if (playerScoreValue >= 3 || computerScoreValue >= 3) {
-            if (playerScoreValue > computerScoreValue) {
-                matchWinner.innerText = "Congratulations! You win the match! Press RESET SCORES! to start again";
-            } else if (computerScoreValue > playerScoreValue) {
-                matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET SCORES! to start again";
-            }
-
-            removeGameEventListeners();
+            return true;
         }
+        return false;
     }
 
-    function incrementPlayerScore(winner) {
-        if (winner === 'player') {
-            let currentScore = parseInt(playerScore.innerText);
-            let incrementedScore = currentScore + 1;
-            playerScore.innerText = incrementedScore;
-            console.log(incrementedScore);
-        }
-        checkWinner(winner);
+    function incrementPlayerScore() {
+        let currentScore = parseInt(playerScore.innerText);
+        let incrementedScore = currentScore + 1;
+        playerScore.innerText = incrementedScore;
+        console.log(incrementedScore);
     }
 
-    function incrementComputerScore(winner) {
-        if (winner === 'computer') {
-            let currentScore = parseInt(computerScore.innerText);
-            computerScore.innerText = currentScore + 1;
-        }
-        checkWinner(winner);
+    function incrementComputerScore() {
+        let currentScore = parseInt(computerScore.innerText);
+        computerScore.innerText = currentScore + 1;
     }
 
     function incrementRound() {
         let currentRound = parseInt(gameRound.innerText);
         gameRound.innerText = currentRound + 1;
-        removeGameEventListeners();
-
     }
 
     // Add event listener to reset button
@@ -288,7 +270,8 @@ document.addEventListener('DOMContentLoaded', function () {
         displayPlayerHand.innerText = '';
         displayComputerHand.innerText = '';
         matchWinner.innerText = "THE WINNER IS FIRST TO SCORE 3!";
-        resetButton.style.backgroundColor = 'rgb(50, 150, 50)';
-        addGameEventListeners();
+        setTimeout(function () {
+            addGameEventListeners();
+        }, 2000);
     }
 });
