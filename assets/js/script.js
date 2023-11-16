@@ -13,11 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const resetButton = document.getElementById('reset-button');
     let displayComputerHand = document.getElementById('display-computer-weapon');
     let displayPlayerHand = document.getElementById('display-user-weapon');
-    // Store round winner as global variable
-    let winner = "";
     // Set curser to be already in the answer box, from love maths
     document.getElementById("usersname").focus();
-
     //Allow user to use enter key to be READY! from love maths project
     start.addEventListener("keydown", function (event) {
         event.preventDefault();
@@ -148,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     addGameEventListeners();
                 }
-            }, 2000);
+            }, 1000);
         } else {
             incrementComputerScore();
             incrementRound();
@@ -162,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     addGameEventListeners();
                 }
-            }, 2000);
+            }, 1000);
         }
     }
 
@@ -217,6 +214,6 @@ document.addEventListener('DOMContentLoaded', function () {
         matchWinner.innerText = "THE WINNER IS FIRST TO SCORE 3!";
         setTimeout(function () {
             addGameEventListeners();
-        }, 2000);
+        }, 1000);
     }
 });
