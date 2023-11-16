@@ -1,12 +1,6 @@
 // This ensures JavaScript code runs after the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-    /*
-    * Declare variables for DOM elements
-    * Declare variables for player name
-    * Declare variables for character selection for player
-    * declare variables for computer character
-    * declare variables for weapon selection
-    */
+    /* Declare variables*/
     let customPlayerName = document.getElementById('player-name-zone');
     let customPlayerIcon = document.getElementById('user-chosen-icon');
     let weapons = document.getElementsByClassName('weapon');
@@ -126,16 +120,12 @@ document.addEventListener('DOMContentLoaded', function () {
         displayComputerHand.innerHTML = `${computerHandSelection}`;
         if (playerHandSelection === computerHandSelection) {
             // no increment in score
-            // increment only round
             incrementRound();
-            // add draw message
             matchWinner.innerText = "It's a Draw, try again!";
             setTimeout(function () {
                 // add time delay
-                // add event listener and remove return draw
                 addGameEventListeners();
             }, 2000);
-            // return "draw";
         } else if (
             (playerHandSelection === "rock" && (computerHandSelection === "scissors" || computerHandSelection === "lizard")) ||
             (playerHandSelection === "paper" && (computerHandSelection === "rock" || computerHandSelection === "spock")) ||
@@ -143,7 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
             (playerHandSelection === "lizard" && (computerHandSelection === "spock" || computerHandSelection === "paper")) ||
             (playerHandSelection === "spock" && (computerHandSelection === "rock" || computerHandSelection === "scissors"))
         ) {
-            // increment player score
             incrementPlayerScore();
             // increment round
             incrementRound();
@@ -151,33 +140,23 @@ document.addEventListener('DOMContentLoaded', function () {
             matchWinner.innerText = "You win this round, Well done!";
             setTimeout(function () {
                 // add time delay
-                // check for overall winner
                 let winner = checkWinner();
-                // if overall winner declare winner
                 if (winner) {
                     matchWinner.innerText = "Congratulations! You win the match! Press RESET SCORES! to start again";
-                    // else 
-                    // add event listener and remove return player
                 } else {
                     addGameEventListeners();
                 }
             }, 2000);
         } else {
-            // increment comp score
             incrementComputerScore();
-            // increment round
             incrementRound();
             // add you lose round message
             matchWinner.innerText = "You lose this round, try again!";
             setTimeout(function () {
                 // add time delay
-                // check for overall winner
                 let winner = checkWinner();
-                // if overall winner declare you lost
                 if (winner) {
                     matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET SCORES! to start again";
-                    // else
-                    // add event listener and remove return computer
                 } else {
                     addGameEventListeners();
                 }
@@ -185,48 +164,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // The main game 'loop'
+    // Start the game
     function runGame(name, playerIcon) {
-        console.log('runGame');
         // Update player details and computer's icon
         updatePlayerDetails(name, playerIcon);
         computerPlayerIcon();
-        console.log(name);
-        console.log(playerIcon);
-        // // Store player's selection
-        // let playerHand = "";
-        // // Store computer's selection
-        // let compHand = "";
-
-        // Add event listener to weapon tiles
         addGameEventListeners();
-
-        // // Add event listener to capture player's selection
-        // for (let weapon of weapons) {
-        //     weapon.addEventListener('click', capturePlayerSelection);
-        // }
-        // // Function to capture player's selection
-        // function capturePlayerSelection(event) {
-        //     playerHand = event.target.id;
-        //     removeGameEventListeners();
-        //     // Get computer's selection
-        //     compHand = computerHandSelection();
-        //     console.log(playerHand);
-        //     console.log(compHand);
-        //     // Display selected choices in game panel
-        //     displayPlayerHand.innerHTML = `${playerHand}`;
-        //     displayComputerHand.innerHTML = `${compHand}`;
-        //     // Determine the round winner
-        //     winner = roundWinner(playerHand, compHand);
-        //     console.log(winner);
-
-        //     // Call other functions and update UI based on the round winner
-        //     checkWinner(winner);
-        //     incrementPlayerScore(winner);
-        //     incrementComputerScore(winner);
-        //     incrementRound();
-        // }
-
     }
 
     // MatchWinner variable to prompt use and display winner
