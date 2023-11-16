@@ -72,8 +72,33 @@ R-P-S-L-S Game is a site that hopes to demonstrate how pure JavaScript works in 
 
 ![Weapons tiles]()
 
+- __Winner Display Area__
+
+  - When the game is first started the display show "THE WINNER IS FIRST TO SCORE 3!". This worked as expected.
+  - If the user wins a round the display should show "You win this round, Well done!". This worked as expected.
+  - If the computer wins a round the display should show "You lose this round, try again!". This worke as expected.
+  - If user and computer choose the same then display should show "It's a draw, try again!". This worked as expected.
+  - If the user reaches the score of 3 first, the display should show "Congratulations! You win the match! Press RESET SCORES! to start again". This worked as expected.
+  - If the computer reaches the score of 3 first, the display should show "Computer wins the match. Better luck next time! Press RESET SCORES! to start again". This worked as expected.
+
+![Winner display area]()
+  
 - __Score Board Area__
-- 
+
+  - After the first weapons have been chosen The round counter should display 1, then increment by 1 after each round of selections, until the Match winner is displayed. This worked as expected.
+  - If the user wins the round the user score should increment by 1. This worked as expected.
+  - If the computer wins the round the computer score should increment by 1. This worked as expected.
+  - If both selections are the same the scores should not increment. This worked as expected.
+  - If the RESET SCORES! button is clicked, this should return the counters to 0. This worked as expected.
+
+![Score board area]()
+
+- __Game Zone Areas__
+
+  - The users name, selected icon(character) and weapon choice should be displayed in the player game zone area. This worked as expected.
+  - The computer name, selected icon(character) and weapon choice should be displayed in the computer game zone area. This worked as expected.
+
+![Game zones]()
 
 ### Validator Testing
 
