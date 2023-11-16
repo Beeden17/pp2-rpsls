@@ -167,3 +167,12 @@ footer {
     color: rgb(50, 150, 50);
     font-weight: bold;
 }
+
+/* Media queries */
+
+@media (max-width: 768px) {
+    footer {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+}
