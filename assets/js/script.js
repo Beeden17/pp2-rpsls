@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         // Validate user input here!!!
         if (name.length >= 2 && name.length <= 10 && !/\s/.test(name)) {
-            alert('Choose a weapon!');
+            alert("You're all set. Click ok to play, Check the Game rules at the bottom of the page if you need, then select your first weapon!");
         } else {
             // Invalid player name, display an error message with instructions
             alert('Invalid player name! Please enter a name with 2 to 10 characters and no spaces.');
@@ -122,9 +122,17 @@ document.addEventListener('DOMContentLoaded', function () {
         if (playerHandSelection === computerHandSelection) {
             // no increment in score
             // increment only round
+            incrementRound();
+            // Display selected choices in game panel
+            displayPlayerHand.innerHTML = `${playerHand}`;
+            displayComputerHand.innerHTML = `${compHand}`;
             // add draw message
-            // add time delay
+            setTimeout(function () {
+                matchWinner.innerText = "It's a Draw, try again!";
+                // add time delay
+            }, 1000);
             // add event listener and remove return draw
+            addGameEventListeners();
             return "draw";
         } else if (
             (playerHandSelection === "rock" && (computerHandSelection === "scissors" || computerHandSelection === "lizard")) ||
@@ -133,24 +141,49 @@ document.addEventListener('DOMContentLoaded', function () {
             (playerHandSelection === "lizard" && (computerHandSelection === "spock" || computerHandSelection === "paper")) ||
             (playerHandSelection === "spock" && (computerHandSelection === "rock" || computerHandSelection === "scissors"))
         ) {
+            // Display selected choices in game panel
+            displayPlayerHand.innerHTML = `${playerHand}`;
+            displayComputerHand.innerHTML = `${compHand}`;
             // increment player score
+            incrementPlayerScore(winner);
             // increment round
+            incrementRound();
             // add you win round message
+            matchWinner.innerText = "You win this round, Well done!";
             // add time delay
+            1000;
             // check for overall winner
+            checkWinner(winner);
             // if overall winner declare winner
-            // else 
-            // add event listener and remove return player
+            if (playerScoreValue === '3') {
+                matchWinner.innerText = "Congratulations! You win the match! Press RESET SCORES! to start again";
+                // else 
+                // add event listener and remove return player
+            } else {
+                addGameEventListeners();
+            }
             return "player";
         } else {
+            // Display selected choices in game panel
+            displayPlayerHand.innerHTML = `${playerHand}`;
+            displayComputerHand.innerHTML = `${compHand}`;
             // increment comp score
+            incrementComputerScore(winner);
             // increment round
+            incrementRound();
             // add you lose round message
+            matchWinner.innerText = "You lose this round, try again!";
             // add time delay
             // check for overall winner
+            checkWinner(winner);
             // if overall winner declare you lost
-            // else
-            // add event listener and remove return computer
+            if (computerScoreValue === '3') {
+                matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET SCORES! to start again";
+                // else
+                // add event listener and remove return computer
+            } else {
+                addGameEventListeners();
+            }
             return "computer";
         }
     }
@@ -211,11 +244,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 matchWinner.innerText = "Congratulations! You win the match! Press RESET SCORES! to start again";
             } else if (computerScoreValue > playerScoreValue) {
                 matchWinner.innerText = "Computer wins the match. Better luck next time! Press RESET SCORES! to start again";
-            } else {
-                matchWinner.innerText = "It's a draw. Press RESET SCORES! to start again";
             }
 
-            resetButton.style.backgroundColor = 'rgb(50, 150, 50)';
             removeGameEventListeners();
         }
     }
