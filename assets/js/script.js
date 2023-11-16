@@ -89,15 +89,17 @@ document.addEventListener('DOMContentLoaded', function () {
             customPlayerIcon.innerHTML = '<i class="fa-solid fa-ghost"></i>';
         }
     }
+    let compHand = computerHandSelection();
+    let playerHand = event.target.id;
 
     // Add event listener when the weapon tiles are selected, this will start the game
     function playerHandSelection(event) {
         console.log('playerHandSelection1');
         console.log(event);
         console.log(event.target.id);
-        let playerHand = event.target.id;
+
         removeGameEventListeners();
-        let compHand = computerHandSelection();
+
         roundWinner(playerHand, compHand);
     }
     function addGameEventListeners() {

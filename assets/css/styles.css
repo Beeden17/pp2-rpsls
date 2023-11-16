@@ -170,7 +170,7 @@ footer {
 
 /* Media queries */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     footer {
         padding-top: 10%;
         padding-bottom: 10%;

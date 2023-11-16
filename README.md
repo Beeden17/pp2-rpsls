@@ -38,27 +38,42 @@ R-P-S-L-S Game is a site that hopes to demonstrate how pure JavaScript works in 
   - This section will have inntructions that the winner will be the first to score 3, whoever scores 3 first the user will see the diplay showing who the winner is.
   - This section will also have a reset scores button to allow user to reset the score and round to 0.
 
-![score]()
+![Score]()
 
-For some/all of your features, you may choose to reference the specific project files that implement them.
+- __The Game Rules Area__
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+  - This section will show the user which "weapon" wins against eachother.
 
 ### Features Left to Implement
 
-- Add more weapons to add to the complexity.
-- Add more player characters to allow more customization.
-- Add more players to the game.
+- Add more weapons to increase difficulty.
+- Add extra player characters to allow more customization.
+- Add multiple players to the game.
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your project’s features and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+- __Form validation__
+  
+  - The text input for player's name should only accept 2-10 characters with no spaces. Placeholder text is used to point this out and if not inputted correctly an Alert message will be displayed. This worked as expected.
+  - The radio button input was used to allow the user to select an icon as a character, with the astronaut checked to ensure this is not missed, whilst allowing the user to change if desired. This worked as expected.
+  - When the user has completed the form, they can click the "GET READY!" button, which should grow and the cursor should turn to a pointer when hovered over, this button should display an Alert message with instructions how to play the game. This all worked as expected.
+  - A randomly generated Icon should be chosen by the computer and then displayed in the computer game zone. This worked as expected.
+  - The data from the form should be passed in to the player and computer game zones, respectively, to be displayed. This worked as expected.
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+![Form validation]()
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+- __Weapons Tiles__
+  
+  - The weapons tiles should be displayed inline and grow, with the cursor changing to pointer when hovered over. This worked as expected.
+  - When the user has selected a weapon the corresponding text should be displayed in the player game zone allowing the user to be clear of their choice. This worked as expected.
+  - The computer will then randomly generate a choice and this should also be displayed in the computer game zone, as text. This worked as expected.
+  - The user should not be able to make another selection until the computer has made its choice. This worked as expected.
+  - The outcome should follow the game rules, which are displayed in the footer, if user and computer choose the same weapon it should be a draw. This worked as expected.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+![Weapons tiles]()
+
+- __Score Board Area__
+- 
 
 ### Validator Testing
 
