@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         if (event.key === "Enter") {
             runGame();
+            resetPositive();
 
         }
     });
@@ -51,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         console.log(event);
         runGame(name, playerIcon);
+        resetPositive();
     });
 
     // Generate computer Icon random
