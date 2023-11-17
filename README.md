@@ -4,7 +4,7 @@ I have decided to create a Rock, Paper, Scissors, Lizard, Spock game (R-P-S-L-S)
 
 R-P-S-L-S Game is a site that hopes to demonstrate how pure JavaScript works in a real-world context. The site will be targeted toward people who not only love to implement more advanced JavaScript concepts but also play games. R-P-S-L-S is a fully responsive JavaScript game that will allow users to play a game of luck against the computer.
 
-![Responsive Mockup]()
+![Responsive Mockup](/assets/docs/)
 
 ## Features
 
@@ -103,7 +103,7 @@ R-P-S-L-S Game is a site that hopes to demonstrate how pure JavaScript works in 
 ### Validator Testing
 
 - HTML
-  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-maths%2F)
+  - No errors were returned when passing through the official validator, it did return info about trailing slashes to close out break line input and link tags. I believe this is due to changes in the standards. As these were only info messages I decided I to stick with the methods taught on the course and will research further for the next project. [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbeeden17.github.io%2Fpp2-rpsls%2F)
 - CSS
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-maths%252F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript

@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // Invalid player name, display an error message with instructions
             alert('Invalid player name! Please enter a name with 2 to 10 characters and no spaces.');
         }
-        console.log(event);
         runGame(name, playerIcon);
         resetPositive();
     });
@@ -85,9 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add event listener when the weapon tiles are selected, this will start the game
     function playerHandSelection(event) {
-        console.log('playerHandSelection1');
-        console.log(event);
-        console.log(event.target.id);
         let playerHand = event.target.id;
         let compHand = computerHandSelection();
         removeGameEventListeners();
@@ -188,7 +184,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let currentScore = parseInt(playerScore.innerText);
         let incrementedScore = currentScore + 1;
         playerScore.innerText = incrementedScore;
-        console.log(incrementedScore);
     }
 
     function incrementComputerScore() {
