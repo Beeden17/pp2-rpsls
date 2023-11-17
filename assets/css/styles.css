@@ -163,7 +163,7 @@ button:hover {
 footer {
     background-color: black;
     height: 100%;
-    margin-top: none;
+    margin-top: 0;
     color: rgb(50, 150, 50);
     font-weight: bold;
 }
